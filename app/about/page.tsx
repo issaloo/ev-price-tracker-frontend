@@ -1,11 +1,23 @@
-import Image from "next/image";
+import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p>About page</p>
-      </div>
-    </main>
+    <div className="w-screen flex flex-row justify-center">
+      <Card className="mt-10 sm:w-4/6 md:w-3/6 w-5/6">
+        <CardHeader className="uppercase font-extrabold text-3xl flex gap-3">
+          About Me
+        </CardHeader>
+        <Divider />
+        <CardBody>
+          <p className="text-lg">
+            Hey there! I am DC, a passionate enthusiast with a love for electric
+            vehicles (EVs), web scraping, and web development. Beyond these
+            three key interests, I thrive on learning, design, and
+            problem-solving, and I am always eager to explore new challenges and
+            opportunities. Thanks for visiting my website!
+          </p>
+        </CardBody>
+      </Card>
+    </div>
   );
 }
