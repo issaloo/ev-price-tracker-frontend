@@ -1,8 +1,16 @@
-"use client";
+import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar/NavBar";
+import Provider from "./components/NextUI/Provider";
+import Footer from "./components/Footer/Footer";
 import "./globals.css";
 import * as React from "react";
-import { NextUIProvider } from "@nextui-org/react";
+
+export const metadata = {
+  title: "INSERT",
+  description: "INSERT",
+};
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -10,11 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <NextUIProvider>
-      <body>
+    <Provider>
+      <body className={`${inter.className}`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
-    </NextUIProvider>
+    </Provider>
   );
 }
