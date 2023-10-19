@@ -5,6 +5,9 @@ import Logo from "public/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import NavSideMenu from "./NavSideMenu";
+import { Switch } from "@nextui-org/react";
+import { MoonIcon } from "../DarkMode/MoonIcon";
+import { SunIcon } from "../DarkMode/SunIcon";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,6 +36,20 @@ const NavBar = () => {
               <li className="ml-10 uppercase hover:border-b text-xl">Graphs</li>
             </Link>
           </ul>
+          {/* work on this */}
+          <Switch
+            defaultSelected
+            size="lg"
+            color="secondary"
+            thumbIcon={({ isSelected, className }) =>
+              isSelected ? (
+                <SunIcon className={className} />
+              ) : (
+                <MoonIcon className={className} />
+              )
+            }
+          ></Switch>
+          {/* work on this */}
         </div>
         <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
           <AiOutlineMenu size={25} />
