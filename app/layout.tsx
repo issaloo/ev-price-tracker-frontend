@@ -30,4 +30,3 @@ export default function RootLayout({
     </Provider>
   );
 }
-// How to make footer part of main and main
