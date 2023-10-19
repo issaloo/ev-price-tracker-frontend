@@ -42,7 +42,7 @@
     "**/*.{css,less,scss,html,json,jsx,js,ts,tsx}": [
       "prettier --write ."
     ],
-    "*.js": "eslint --fix"
+    "**/*.{jsx,js,ts,tsx}": "eslint --fix"
   },
   "config": {
     "commitizen": {
