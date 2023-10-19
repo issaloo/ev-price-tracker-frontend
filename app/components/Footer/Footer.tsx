@@ -22,6 +22,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// TODO: left off here
-// hr has dark and light mode
