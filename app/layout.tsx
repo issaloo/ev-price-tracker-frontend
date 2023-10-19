@@ -6,8 +6,11 @@ import "./globals.css";
 import * as React from "react";
 
 export const metadata = {
-  title: "INSERT",
+  title: "EV Price Tracker - Follow Daily MSRP Changes",
   description: "INSERT",
+  icons: {
+    icon: "/Favicon.png",
+  },
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,9 +24,10 @@ export default function RootLayout({
     <Provider>
       <body className={`${inter.className}`}>
         <NavBar />
-        {children}
+        <main className="min-h-[calc(100vh-140px)]">{children}</main>
         <Footer />
       </body>
     </Provider>
   );
 }
+// How to make footer part of main and main
