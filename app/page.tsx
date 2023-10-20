@@ -1,11 +1,5 @@
-import Image from "next/image";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Divider,
-  CardFooter,
-} from "@nextui-org/react";
+// import Image from "next/image"
+import CardContainer from "./components/Card/CardContainer";
 
 // TODO: remove mock data
 type EvProps = {
@@ -84,73 +78,11 @@ export default function Home() {
                   {ev.brandName}
                 </h4>
               </div>
-              <Divider className="mt-3 mb-5" />
             </div>
             <div className="flex sm:flex-row flex-col">
               {ev.itemDetails.map((item) => {
                 return (
-                  <Card
-                    radius="lg"
-                    className="mx-4 my-4 min-w-min"
-                    key={item.modelName}
-                  >
-                    <CardHeader
-                      className={`"md:text-xl sm:text-lg ${
-                        item.modelName.indexOf(" ") >= 0
-                          ? "capitalize"
-                          : "uppercase"
-                      }`}
-                    >
-                      {item.modelName}
-                    </CardHeader>
-                    <Divider className="" />
-                    <CardBody className="flex justify-center items-center">
-                      <Image
-                        className="object-cover rounded-xl"
-                        src={item.imageSrc}
-                        // fill
-                        width={200}
-                        height={200}
-                        alt=""
-                      />
-                    </CardBody>
-                    <CardFooter className="flex flex-col justify-center items-center">
-                      <div className="text-md text-blue-800 font-bold">
-                        ${item.currentPrice.toLocaleString("en")}
-                      </div>
-                      <div className="text-xs">
-                        Previous:{" "}
-                        <span className="text-slate-500">
-                          ${item.previousPrice.toLocaleString("en")}
-                        </span>
-                      </div>
-                      <div className="text-xs">
-                        {`${
-                          item.currentPrice < item.previousPrice
-                            ? "Discount: "
-                            : "Increase: "
-                        }`}
-                        <span
-                          className={`${
-                            item.currentPrice < item.previousPrice
-                              ? "text-green-500"
-                              : "text-red-500"
-                          }`}
-                        >
-                          {(
-                            parseFloat(
-                              (
-                                Math.abs(
-                                  item.currentPrice - item.previousPrice,
-                                ) / item.previousPrice
-                              ).toFixed(4),
-                            ) * 100
-                          ).toFixed(2)}
-                          %
-                        </span>
-                      </div>
-                    </CardFooter>
-                  </Card>
+                  <CardContainer itemDetails={item} key={item.modelName} />
                 );
               })}
             </div>
@@ -160,7 +92,6 @@ export default function Home() {
     </div>
   );
 }
-// TODO: break out functions
 // Make min-width better and consistent
 // Hamburger menu not working anymore
 // Add updated at

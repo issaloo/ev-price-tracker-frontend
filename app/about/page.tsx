@@ -1,4 +1,6 @@
-import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
 
 export default function Home() {
   return (
@@ -7,8 +9,7 @@ export default function Home() {
         <CardHeader className="uppercase font-extrabold text-3xl flex gap-3">
           About Me
         </CardHeader>
-        <Divider />
-        <CardBody>
+        <CardContent>
           <p className="text-lg">
             Hey there! I am DC, a passionate enthusiast with a love for electric
             vehicles (EVs), web scraping, and web development. Beyond these
@@ -16,7 +17,7 @@ export default function Home() {
             problem-solving, and I am always eager to explore new challenges and
             opportunities. Thanks for visiting my website!
           </p>
-        </CardBody>
+        </CardContent>
       </Card>
     </div>
   );

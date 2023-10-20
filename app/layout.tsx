@@ -1,12 +1,11 @@
 import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar/NavBar";
-import Provider from "./components/NextUI/Provider";
 import Footer from "./components/Footer/Footer";
 import "./globals.css";
 import * as React from "react";
 
 export const metadata = {
-  title: "EV Price Tracker - Follow Daily MSRP Changes",
+  title: "EV Price Tracker | Follow Daily MSRP Changes",
   description: "INSERT",
   icons: {
     icon: "/Favicon.png",
@@ -21,12 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Provider>
+    <html lang="en">
       <body className={`${inter.className}`}>
         <NavBar />
         <main className="min-h-[calc(100vh-140px)]">{children}</main>
         <Footer />
       </body>
-    </Provider>
+    </html>
   );
 }
