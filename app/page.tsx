@@ -1,5 +1,6 @@
-// import Image from "next/image"
 import CardContainer from "./components/Card/CardContainer";
+import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
 
 // TODO: remove mock data
 type EvProps = {
@@ -74,18 +75,25 @@ export default function Home() {
           <div className="my-10 mx-10" key={ev.brandName}>
             <div className="">
               <div className="">
-                <h4 className="text-4xl font-bold capitalize">
+                <h4 className="ml-4 text-4xl font-bold capitalize">
                   {ev.brandName}
                 </h4>
               </div>
             </div>
-            <div className="flex sm:flex-row flex-col">
+            <Divider variant="middle" className="my-3" />
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              rowSpacing={1}
+            >
               {ev.itemDetails.map((item) => {
                 return (
                   <CardContainer itemDetails={item} key={item.modelName} />
                 );
               })}
-            </div>
+            </Grid>
           </div>
         );
       })}
