@@ -18,7 +18,7 @@ const CardContainer = ({ itemDetails }: any) => {
           />
         </div>
         <CardContent className="ml-2 pb-1 pt-3">
-          <Divider />
+          <Divider className="mb-2" />
           <Typography
             variant="h6"
             className={`font-medium ${
