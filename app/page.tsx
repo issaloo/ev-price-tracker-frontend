@@ -122,6 +122,3 @@ export default function Home() {
     </div>
   );
 }
-// Make min-width better and consistent
-// Hamburger menu not working anymore
-// Add updated at
