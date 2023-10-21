@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 
 export default function Home() {
   return (
-    <div className="w-screen flex flex-row justify-center h-screen items-start">
+    <div className="w-screen flex flex-row justify-center items-start">
       <Card className="mt-9 md:w-3/5 sm:w-4/5 mx-6">
         <CardContent>
           <Typography variant="h5">About Me</Typography>
@@ -20,3 +20,5 @@ export default function Home() {
     </div>
   );
 }
+// todo: update this to have digestible contents footer showing!!
+// seems like there needs to be more information

@@ -5,8 +5,9 @@ import "./globals.css";
 import * as React from "react";
 
 export const metadata = {
-  title: "EV Price Tracker | Follow Daily MSRP Changes",
-  description: "INSERT",
+  title: "EV Price Tracker | Stay Informed About Electric Vehicle Costs",
+  description:
+    "Get daily updates on Tesla, Rivian, and Lucid electric vehicle base prices. Compare costs, find the best deals, and make informed choices with our real-time EV price tracker. Stay ahead in the electric vehicle market with accurate pricing data.",
   icons: {
     icon: "/Favicon.png",
   },
@@ -21,9 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body
+        className={`h-screen flex flex-col justify-between ${inter.className}`}
+      >
         <NavBar />
-        <main className="min-h-[calc(100vh-140px)]">{children}</main>
+        <main className="mb-auto">{children}</main>
         <Footer />
       </body>
     </html>

@@ -14,13 +14,13 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full h-24 shadow-xl bg-white z-50">
+    <nav className="sticky top-0 w-full py-3 h-24 shadow-xl bg-white z-50">
       <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
         <Link href="/">
           <Image
             src={Logo}
             alt="Logo"
-            width="100"
+            // width="100"
             height="60"
             className="cursor-pointer"
           />

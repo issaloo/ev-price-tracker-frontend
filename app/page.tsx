@@ -1,6 +1,8 @@
 import CardContainer from "./components/Card/CardContainer";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
 // TODO: remove mock data
 type EvProps = {
@@ -68,11 +70,31 @@ const evPriceJson = [
 ] as EvProps[];
 
 export default function Home() {
+  const datetime =
+    new Date().getMonth() +
+    1 +
+    "/" +
+    new Date().getDate() +
+    "/" +
+    new Date().getFullYear().toString().substr(-2) +
+    " 8:00 UTC";
+
   return (
-    <div className="">
+    <div className="flex flex-col">
+      <div className="w-full flex flex-row justify-end mt-2">
+        <Typography
+          color="slategray"
+          variant="caption"
+          className="pr-10"
+          sx={{ display: "flex", alignItems: "center" }}
+        >
+          <RefreshIcon fontSize="small" className="mr-1" />
+          Updated {datetime}
+        </Typography>
+      </div>
       {evPriceJson.map((ev) => {
         return (
-          <div className="my-10 mx-10" key={ev.brandName}>
+          <div className="my-3 mx-10" key={ev.brandName}>
             <div className="">
               <div className="">
                 <h4 className="ml-4 text-4xl font-bold capitalize">
