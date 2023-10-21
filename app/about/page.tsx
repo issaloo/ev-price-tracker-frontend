@@ -20,5 +20,3 @@ export default function Home() {
     </div>
   );
 }
-// todo: update this to have digestible contents footer showing!!
-// seems like there needs to be more information
