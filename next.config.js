@@ -6,4 +6,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-// make the domains dynamic?
+// make the domains for photos dynamic

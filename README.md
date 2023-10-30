@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EV Price Tracker - Frontend
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This repo contains code to ...
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Technologies
+
+- Secret Manager (GCP)
+  - Store secrets
+- Cloud Source Repositories (GCP)
+  - Mirror this repository for cloud function
+- Django Rest Framework
+  - Create Rest API
+- NextJS
+  - Quick boilerplate for UI
+
+## Running Local Environment
+
+### Backend
+
+1. Clone [ev-price-tracker-backend](https://github.com/issaloo/ev-price-tracker-backend)
+2. Navigate to src directory
+
+```Shell
+cd src
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run Django Server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```Shell
+   python manage.py runserver --settings=main.settings.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Frontend
 
-## Learn More
+In a separate terminal...
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone [ev-price-tracker-frontend](https://github.com/issaloo/ev-price-tracker-frontend)
+2. Navigate to the root directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```Shell
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Open [http://localhost:3000](http://localhost:3000) with your browser
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### General Guidelines
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+FILL IN HERE
+
+### Set Up Development Environment
+
+FILL IN HERE

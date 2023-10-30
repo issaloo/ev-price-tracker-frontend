@@ -30,8 +30,10 @@ const NavBar = () => {
             <Link href="/about">
               <li className="ml-10 uppercase hover:border-b text-xl">About</li>
             </Link>
-            <Link href="/graphs">
-              <li className="ml-10 uppercase hover:border-b text-xl">Graphs</li>
+            <Link href="/vehicles">
+              <li className="ml-10 uppercase hover:border-b text-xl">
+                Vehicles
+              </li>
             </Link>
           </ul>
         </div>

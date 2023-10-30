@@ -26,12 +26,12 @@ const NavSideMenu = ({ setMenuOpen }: NavSideMenuProps) => {
             About
           </li>
         </Link>
-        <Link href="/graphs">
+        <Link href="/vehicles">
           <li
             onClick={() => setMenuOpen(false)}
             className="py-4 cursor-pointer uppercase"
           >
-            Graphs
+            Vehicles
           </li>
         </Link>
       </ul>
