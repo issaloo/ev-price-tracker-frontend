@@ -24,7 +24,11 @@ const CardContainer = ({ itemDetails }: any) => {
       // onClick={handleClick}
       raised
     >
-      <CardActionArea>
+      <CardActionArea
+        href={`/graph/${itemDetails.modelName
+          .replace(/\s+/g, "-")
+          .toLowerCase()}`}
+      >
         <div className="h-64 sm:h-32 items-center flex">
           <CardMedia
             component="img"

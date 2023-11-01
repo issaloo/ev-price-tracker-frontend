@@ -34,13 +34,9 @@ export default async function Home() {
       {evPriceJson.map((ev: EvPrice) => {
         return (
           <div className="my-3 mx-10" key={ev.brandName}>
-            <div className="">
-              <div className="">
-                <h4 className="ml-4 text-4xl font-bold capitalize">
-                  {ev.brandName}
-                </h4>
-              </div>
-            </div>
+            <h4 className="ml-4 text-4xl font-bold capitalize">
+              {ev.brandName}
+            </h4>
             <Divider variant="middle" className="my-3" />
             <Grid
               container
