@@ -7,26 +7,26 @@ import {
   Tooltip,
 } from "@visx/xychart";
 
-const TimeSeriesChart = ({ data }) => {
-  const newData = data.map((obj) => ({
-    ...obj,
-    x: new Date(obj.x),
-  }));
+const TimeSeriesChart = ({ data }: any) => {
   const accessors = {
-    xAccessor: (d) => d.x,
-    yAccessor: (d) => d.y,
+    xAccessor: (d: any) => new Date(`${d.x}T00:00:00`),
+    yAccessor: (d: any) => d.y,
   };
-  // work on fixing this error
+  // add func to get min/max, then get rough range for values to display
+  // add more ticks
   return (
     <XYChart
       height={300}
+      width={500} // make responsive
+      margin={{ left: 65, top: 20, bottom: 60, right: 20 }}
       xScale={{ type: "time" }}
-      yScale={{ type: "linear", domain: [30000, 50000] }}
+      yScale={{ type: "linear" }}
     >
-      <AnimatedAxis orientation="left" label="Base Price" />
-      <AnimatedAxis orientation="bottom" numTicks={5} />
+      <AnimatedAxis orientation="left" label="Base Price" labelOffset={35} />
+      <AnimatedAxis orientation="bottom" numTicks={6} />
       <AnimatedGrid columns={false} numTicks={10} />
-      <AnimatedLineSeries dataKey="Line 1" data={newData} {...accessors} />
+      {/* fill dataKey */}
+      <AnimatedLineSeries dataKey="Line 1" data={data} {...accessors} />
       <Tooltip
         snapTooltipToDatumX
         snapTooltipToDatumY
@@ -34,12 +34,22 @@ const TimeSeriesChart = ({ data }) => {
         showSeriesGlyphs
         renderTooltip={({ tooltipData, colorScale }) => (
           <div>
-            <div style={{ color: colorScale(tooltipData.nearestDatum.key) }}>
-              {tooltipData.nearestDatum.key}
+            <div style={{ marginBottom: "5px" }}>
+              $
+              {accessors
+                .yAccessor(tooltipData.nearestDatum.datum)
+                .toLocaleString("en")}
             </div>
-            {accessors.xAccessor(tooltipData.nearestDatum.datum)}
-            {", "}
-            {accessors.yAccessor(tooltipData.nearestDatum.datum)}
+            <div
+              style={{
+                color: "#999",
+              }}
+            >
+              {accessors
+                .xAccessor(tooltipData.nearestDatum.datum)
+                .toDateString()
+                .replace(/^\S+\s/, "")}
+            </div>
           </div>
         )}
       />
