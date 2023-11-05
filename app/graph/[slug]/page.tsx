@@ -7,9 +7,11 @@ export default async function Graph({ params }: { params: { slug: string } }) {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full flex flex-row mt-2">
-        <h4 className="ml-4 text-4xl font-bold capitalize">{params.slug}</h4>
-        <TimeSeriesChart data={graphData}></TimeSeriesChart>
+      <div className="w-full flex flex-row justify-center items-start">
+        <div className="my-10">
+          <h4 className="ml-4 text-4xl font-bold capitalize">{params.slug}</h4>
+          <TimeSeriesChart data={graphData}></TimeSeriesChart>
+        </div>
       </div>
     </div>
   );

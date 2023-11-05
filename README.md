@@ -17,9 +17,29 @@ This repo contains code to ...
 
 ## Running Local Environment
 
+### Database
+
+1. In a terminal, proxy redis
+
+```Shell
+fly proxy 6379 -a evpricetrackercache
+```
+
+2. In another terminal, connect to redis-cli
+
+```Shell
+redis-cli
+```
+
+Auth into redis data base
+
+```Shell
+AUTH <PASSWORD>
+```
+
 ### Backend
 
-1. Clone [ev-price-tracker-backend](https://github.com/issaloo/ev-price-tracker-backend)
+1. In a terminal, clone [ev-price-tracker-backend](https://github.com/issaloo/ev-price-tracker-backend)
 2. Navigate to src directory
 
 ```Shell
@@ -34,9 +54,7 @@ cd src
 
 ### Frontend
 
-In a separate terminal...
-
-1. Clone [ev-price-tracker-frontend](https://github.com/issaloo/ev-price-tracker-frontend)
+1. In a terminal, clone [ev-price-tracker-frontend](https://github.com/issaloo/ev-price-tracker-frontend)
 2. Navigate to the root directory
 
 ```Shell
@@ -48,9 +66,5 @@ npm run dev
 ## Contributing
 
 ### General Guidelines
-
-FILL IN HERE
-
-### Set Up Development Environment
 
 FILL IN HERE

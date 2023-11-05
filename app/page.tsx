@@ -1,7 +1,5 @@
 import CardContainer from "./components/Card/CardContainer";
-import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
+import { Divider, Grid, Typography } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { getEvPrice } from "./hooks/getEvPrice";
 import { EvPrice } from "./types/evPrice";
@@ -15,7 +13,7 @@ export default async function Home() {
     "/" +
     new Date().getDate() +
     "/" +
-    new Date().getFullYear().toString().substr(-2) +
+    new Date().getFullYear().toString().substr(-2) + // update this?
     " 8:00 UTC";
 
   return (

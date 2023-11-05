@@ -1,6 +1,6 @@
-import Card from "@mui/material/Card";
-import Typography from "@mui/material/Typography";
-import CardContent from "@mui/material/CardContent";
+import { Typography, CardContent, Card, IconButton } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/Linkedin";
 
 export default function Home() {
   return (
@@ -10,12 +10,24 @@ export default function Home() {
           <CardContent>
             <Typography variant="h5">About Me</Typography>
             <Typography variant="body1">
-              Hey there! I am DC, a passionate enthusiast with a love for
-              electric vehicles (EVs), web scraping, and web development. Beyond
-              these three key interests, I thrive on learning, design, and
-              problem-solving, and I am always eager to explore new challenges
-              and opportunities. Thanks for visiting my website!
+              I&rsquo;m IL, a mechanical engineer turned programmer. I&rsquo;m a
+              second-generation American, with roots in Malaysia and Taiwan, and
+              I grew up in the suburbs of New Jersey. My professional journey
+              has led me to experiences in Data Engineering, ML Engineering, and
+              Data Science. However, my true passion lies in continuously
+              expanding my knowledge of software engineering concepts and using
+              that expertise to create innovative solutions. I&rsquo;m driven by
+              the curiousity to learn and the excitement of building new things.
             </Typography>
+            <IconButton
+              aria-label="linkedin"
+              href="https://www.linkedin.com/in/issac-loo-120b0163/"
+            >
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton aria-label="github" href="https://github.com/issaloo">
+              <GitHubIcon />
+            </IconButton>
           </CardContent>
         </Card>
       </div>
