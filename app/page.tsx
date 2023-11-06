@@ -34,7 +34,7 @@ export default async function Home() {
             <h4 className="ml-4 text-4xl font-bold capitalize">
               {ev.brandName}
             </h4>
-            <Divider variant="middle" className="my-3" />
+            <Divider variant="middle" className="mt-2 mb-4" />
             <Grid
               container
               direction="row"
@@ -44,7 +44,11 @@ export default async function Home() {
             >
               {ev.itemDetails.map((item: EvPriceDetail) => {
                 return (
-                  <CardContainer itemDetails={item} key={item.modelName} />
+                  <CardContainer
+                    itemDetails={item}
+                    brandName={ev.brandName}
+                    key={item.modelName}
+                  />
                 );
               })}
             </Grid>

@@ -3,7 +3,8 @@ import { getGraphData } from "../../hooks/getGraphData";
 
 export default async function Graph({ params }: { params: { slug: string } }) {
   // TODO: update here
-  const graphData = await getGraphData("tesla_model_3");
+  console.log(params.slug);
+  const graphData = await getGraphData(params.slug.replace(/-/g, "_"));
 
   return (
     <div className="flex flex-col">
@@ -14,13 +15,13 @@ export default async function Graph({ params }: { params: { slug: string } }) {
               params.slug.indexOf("-") >= 0 ? "capitalize" : "uppercase"
             }`}
           >
-            {params.slug.replace("-", " ")}
+            {params.slug.replace(/-/g, " ")}
           </h4>
           <TimeSeriesChart data={graphData}></TimeSeriesChart>
-          {/* Add referral https://www.tesla.com/referral/issac66626 */}
         </div>
       </div>
     </div>
   );
   // how to prevent this from any slug to create a page. this could be endless
+  // Look up 404 for nextjs
 }

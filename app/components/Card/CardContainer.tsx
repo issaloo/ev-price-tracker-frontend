@@ -9,8 +9,15 @@ import {
   Button,
 } from "@mui/material";
 // import { useRouter } from "next/router";
+import Link from "next/link";
 
-const CardContainer = ({ itemDetails }: any) => {
+const CardContainer = ({
+  itemDetails,
+  brandName,
+}: {
+  itemDetails: any;
+  brandName: string;
+}) => {
   // const router = useRouter();
   // const handleClick = () => {
   //   router.push(`/${itemDetails.modelName}`);
@@ -22,6 +29,9 @@ const CardContainer = ({ itemDetails }: any) => {
   // useParamas react...query vars
   //  hook
 
+  const brandModelPattern = `${brandName.toLowerCase()}-${itemDetails.modelName
+    .replace(/\s+/g, "-")
+    .toLowerCase()}`;
   return (
     <Card
       className="mx-2 my-2 h-96 sm:h-72 sm:w-64"
@@ -29,19 +39,16 @@ const CardContainer = ({ itemDetails }: any) => {
       // onClick={handleClick}
       raised
     >
-      <CardActionArea
-        href={`/graph/${itemDetails.modelName
-          .replace(/\s+/g, "-")
-          .toLowerCase()}`}
-        className="items-center flex h-56 sm:h-32 w-full overflow-hidden"
-      >
-        <CardMedia
-          component="img"
-          image={itemDetails.imageSrc}
-          className="object-contain"
-          alt={itemDetails.modelName}
-        />
-      </CardActionArea>
+      <Link href={`/graph/${brandModelPattern}`}>
+        <CardActionArea className="items-center flex h-56 sm:h-32 w-full overflow-hidden">
+          <CardMedia
+            component="img"
+            image={itemDetails.imageSrc}
+            className="object-contain"
+            alt={itemDetails.modelName}
+          />
+        </CardActionArea>
+      </Link>
       <CardContent className="ml-2 pb-1 pt-2">
         <Divider className="mb-2" />
         <Typography
