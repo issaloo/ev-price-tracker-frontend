@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery } from "@mui/material";
 import {
   AnimatedAxis,
   AnimatedGrid,
@@ -14,14 +14,11 @@ const TimeSeriesChart = ({ data }: any) => {
     xAccessor: (d: any) => new Date(`${d.x}T00:00:00`),
     yAccessor: (d: any) => d.y,
   };
-  const { maxPrice, minPrice, maxDate, minDate } = data.reduce(
+  const { maxPrice, minPrice } = data.reduce(
     (acc: any, item: any) => {
-      const currentDate = new Date(item.x);
       return {
         maxPrice: Math.max(acc.maxPrice, item.y),
         minPrice: Math.min(acc.minPrice, item.y),
-        maxDate: currentDate > acc.maxDate ? currentDate : acc.maxDate,
-        minDate: currentDate < acc.minDate ? currentDate : acc.minDate,
       };
     },
     {
@@ -35,8 +32,7 @@ const TimeSeriesChart = ({ data }: any) => {
   const gt_md = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <XYChart
-      height={gt_md ? 400 : 300} //
-      width={gt_md ? 800 : 500} // make this based on window size?
+      height={gt_md ? 400 : 250} //
       margin={{ left: 65, top: 20, bottom: 20, right: 0 }}
       xScale={{ type: "time" }}
       yScale={{
@@ -49,6 +45,7 @@ const TimeSeriesChart = ({ data }: any) => {
         label="Base Price"
         labelClassName="font"
         labelOffset={35}
+        numTicks={gt_md ? 12 : 6}
       />
       <AnimatedAxis orientation="bottom" numTicks={gt_md ? 10 : 4} />
       <AnimatedGrid columns={false} />

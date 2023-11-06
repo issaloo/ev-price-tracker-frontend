@@ -13,8 +13,7 @@ export default async function Home() {
     "/" +
     new Date().getDate() +
     "/" +
-    new Date().getFullYear().toString().substr(-2) + // update this?
-    " 8:00 UTC";
+    new Date().getFullYear().toString();
 
   return (
     <div className="flex flex-col">
@@ -31,7 +30,7 @@ export default async function Home() {
       </div>
       {evPriceJson.map((ev: EvPrice) => {
         return (
-          <div className="my-3 mx-10" key={ev.brandName}>
+          <div className="sm:my-3 my-24 sm:mx-36 mx-2" key={ev.brandName}>
             <h4 className="ml-4 text-4xl font-bold capitalize">
               {ev.brandName}
             </h4>

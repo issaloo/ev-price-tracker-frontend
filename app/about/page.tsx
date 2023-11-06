@@ -10,14 +10,19 @@ export default function Home() {
           <CardContent>
             <Typography variant="h5">About Me</Typography>
             <Typography variant="body1">
-              I&rsquo;m IL, a mechanical engineer turned programmer. I&rsquo;m a
-              second-generation American, with roots in Malaysia and Taiwan, and
-              I grew up in the suburbs of New Jersey. My professional journey
-              has led me to experiences in Data Engineering, ML Engineering, and
-              Data Science. However, my true passion lies in continuously
-              expanding my knowledge of software engineering concepts and using
-              that expertise to create innovative solutions. I&rsquo;m driven by
-              the curiousity to learn and the excitement of building new things.
+              I&rsquo;m IL, a mechanical engineer turned programmer.
+              <br />
+              <br />
+              I&rsquo;m a second-generation American, with roots in Malaysia and
+              Taiwan, and I grew up in the suburbs of New Jersey.
+              <br />
+              <br />
+              My professional journey has led me to experiences in Data
+              Engineering, ML Engineering, and Data Science. However, my true
+              passion lies in continuously expanding my knowledge of software
+              engineering concepts and using that expertise to create innovative
+              solutions. I&rsquo;m driven by the curiousity to learn and the
+              excitement of building new things.
             </Typography>
             <IconButton
               aria-label="linkedin"
