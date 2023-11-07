@@ -4,6 +4,7 @@ export async function getGraphData(brandModelPattern: string) {
   const res = await fetch(
     `http://127.0.0.1:8000/api/graph/${brandModelPattern}`,
   );
+  console.log(res);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

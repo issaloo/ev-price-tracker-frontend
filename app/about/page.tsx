@@ -9,7 +9,7 @@ export default function Home() {
         <Card className="mt-9 md:w-3/5 sm:w-4/5 mx-6">
           <CardContent>
             <Typography variant="h5">About Me</Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" className="mb-4">
               I&rsquo;m IL, a mechanical engineer turned programmer.
               <br />
               <br />
