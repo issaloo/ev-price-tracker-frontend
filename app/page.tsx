@@ -5,7 +5,7 @@ import { getEvPrice } from "./hooks/getEvPrice";
 import { EvPrice } from "./types/evPrice";
 import { EvPriceDetail } from "./types/evPriceDetail";
 
-export default async function Home() {
+async function Home() {
   const evPriceJson = await getEvPrice();
   const datetime =
     new Date().getMonth() +
@@ -58,3 +58,5 @@ export default async function Home() {
     </div>
   );
 }
+
+export default Home;

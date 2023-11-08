@@ -1,5 +1,7 @@
 import Home from "../page";
 
-export default function Vehicles() {
+function Vehicles() {
   return <Home />;
 }
+
+export default Vehicles;

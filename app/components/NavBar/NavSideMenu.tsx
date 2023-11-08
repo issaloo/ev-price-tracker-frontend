@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-
+// import NavSideLink from "./NavSideLink";
+// Enhancement: use navObjectList
 type NavSideMenuProps = {
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
 };
@@ -15,7 +16,7 @@ const NavSideMenu = ({ setMenuOpen }: NavSideMenuProps) => {
             onClick={() => setMenuOpen(false)}
             className="py-4 cursor-pointer uppercase"
           >
-            Home
+            home
           </li>
         </Link>
         <Link href="/about">
@@ -23,7 +24,15 @@ const NavSideMenu = ({ setMenuOpen }: NavSideMenuProps) => {
             onClick={() => setMenuOpen(false)}
             className="py-4 cursor-pointer uppercase"
           >
-            About
+            about
+          </li>
+        </Link>
+        <Link href="/faq">
+          <li
+            onClick={() => setMenuOpen(false)}
+            className="py-4 cursor-pointer uppercase"
+          >
+            faq
           </li>
         </Link>
         <Link href="/vehicles">
@@ -31,7 +40,7 @@ const NavSideMenu = ({ setMenuOpen }: NavSideMenuProps) => {
             onClick={() => setMenuOpen(false)}
             className="py-4 cursor-pointer uppercase"
           >
-            Vehicles
+            vehicles
           </li>
         </Link>
       </ul>

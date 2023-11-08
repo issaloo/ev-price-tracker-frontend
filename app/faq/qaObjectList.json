@@ -1,0 +1,17 @@
+[
+  { "question": "How do I use this website?", "answer": "To track " },
+  {
+    "question": "How often are the prices updated?",
+    "answer": "Daily at around 8:00 UTC"
+  },
+  {
+    "question": "Will more EV brands be added?",
+    "answer": "Yes, over time."
+  },
+  {
+    "question": "Where does the data come from?",
+    "answer": "Scraped directly from the EV websites."
+  },
+  { "question": "", "answer": "" },
+  { "question": "", "answer": "" }
+]

@@ -2,12 +2,11 @@ import TimeSeriesChart from "../../components/Graph/TimeSeriesChart";
 import { getGraphData } from "../../hooks/getGraphData";
 import { notFound } from "next/navigation";
 
-export default async function Graph({ params }: { params: { slug: string } }) {
+async function Graph({ params }: { params: { slug: string } }) {
   const graphData = await getGraphData(params.slug.replace(/-/g, "_"));
   if (!graphData) {
     return notFound();
   }
-  console.log(graphData);
 
   return (
     <div className="flex flex-col">
@@ -21,6 +20,6 @@ export default async function Graph({ params }: { params: { slug: string } }) {
       </div>
     </div>
   );
-  // how to prevent this from any slug to create a page. this could be endless
-  // Look up 404 for nextjs
 }
+
+export default Graph;

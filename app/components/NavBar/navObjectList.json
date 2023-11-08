@@ -1,0 +1,5 @@
+[
+  { "pageName": "about", "pageRoute": "/about" },
+  { "pageName": "faq", "pageRoute": "/faq" },
+  { "pageName": "vehicles", "pageRoute": "/vehicles" }
+]
