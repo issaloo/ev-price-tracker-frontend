@@ -1,17 +1,26 @@
 [
-  { "question": "How do I use this website?", "answer": "To track " },
+  {
+    "question": "How do I use this website?",
+    "answer": "Some example use cases for this website: analyze historical prices, compare EV brands and models, and plan your budget."
+  },
   {
     "question": "How often are the prices updated?",
-    "answer": "Daily at around 8:00 UTC"
+    "answer": "Daily at around 8:00 UTC."
   },
   {
     "question": "Will more EV brands be added?",
-    "answer": "Yes, over time."
+    "answer": "Yes."
   },
   {
     "question": "Where does the data come from?",
     "answer": "Scraped directly from the EV websites."
   },
-  { "question": "", "answer": "" },
-  { "question": "", "answer": "" }
+  {
+    "question": "Will more features be added to the website?",
+    "answer": "Yes, I'm currently working on the following: Dark Mode, Combined EV Price Graph, Toggle for Tax Credit, Price Alert."
+  },
+  {
+    "question": "Can I track prices in different currencies or regions?",
+    "answer": "Not at the moment."
+  }
 ]

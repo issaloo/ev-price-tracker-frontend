@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavLink = ({ navObject }: { navObject: any }) => {
+const NavBarLink = ({ navObject }: { navObject: any }) => {
   return (
     <Link href={`${navObject.pageRoute}`}>
       <li className="ml-10 uppercase hover:border-b text-xl">
@@ -10,4 +10,4 @@ const NavLink = ({ navObject }: { navObject: any }) => {
   );
 };
 
-export default NavLink;
+export default NavBarLink;
