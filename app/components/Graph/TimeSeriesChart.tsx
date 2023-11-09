@@ -1,12 +1,12 @@
 "use client";
-import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import {
   AnimatedAxis,
   AnimatedGrid,
   AnimatedLineSeries,
-  XYChart,
   Tooltip,
+  XYChart,
 } from "@visx/xychart";
 
 const TimeSeriesChart = ({ data }: any) => {
@@ -56,7 +56,7 @@ const TimeSeriesChart = ({ data }: any) => {
         snapTooltipToDatumY
         showVerticalCrosshair
         showSeriesGlyphs
-        renderTooltip={({ tooltipData, colorScale }) => (
+        renderTooltip={({ tooltipData }) => (
           <div>
             <div style={{ marginBottom: "5px" }}>
               $

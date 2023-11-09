@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
+
 import TimeSeriesChart from "../../components/Graph/TimeSeriesChart";
 import { getGraphData } from "../../hooks/getGraphData";
-import { notFound } from "next/navigation";
 
 async function Graph({ params }: { params: { slug: string } }) {
   const graphData = await getGraphData(params.slug.replace(/-/g, "_"));

@@ -1,8 +1,10 @@
-import { Inter } from "next/font/google";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
-import "./globals.css";
 import * as React from "react";
+import { Inter } from "next/font/google";
+
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
+
+import "./globals.css";
 
 export const metadata = {
   title: "EV Price Tracker | Stay Informed About Electric Vehicle Costs",

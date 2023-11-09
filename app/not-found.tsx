@@ -1,5 +1,5 @@
-import { Button, Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Button, Typography } from "@mui/material";
 
 function NotFound() {
   return (

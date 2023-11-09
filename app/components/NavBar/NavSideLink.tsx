@@ -1,16 +1,22 @@
-// import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 
-// const NavSideLink = ({ navObject }: { navObject: any }) => {
-//   return (
-//     <Link href={`${navObject.pageRoute}`}>
-//     <li
-//       onClick={() => setMenuOpen(false)}
-//       className="py-4 cursor-pointer uppercase"
-//     >
-//       about
-//     </li>
-//   </Link>
-//   );
-// };
+type NavSideLinkProps = {
+  navObject: any;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
+};
 
-// export default NavSideLink;
+const NavSideLink = ({ navObject, setMenuOpen }: NavSideLinkProps) => {
+  return (
+    <Link href={`${navObject.pageRoute}`}>
+      <li
+        onClick={() => setMenuOpen(false)}
+        className="py-4 cursor-pointer uppercase"
+      >
+        {navObject.pageName}
+      </li>
+    </Link>
+  );
+};
+
+export default NavSideLink;

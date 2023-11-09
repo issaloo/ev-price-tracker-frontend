@@ -1,7 +1,8 @@
-import { Typography, IconButton } from "@mui/material";
-import CardPage from "../components/Card/CardPage";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/Linkedin";
+import { IconButton,Typography } from "@mui/material";
+
+import CardPage from "../components/Card/CardPage";
 
 export default function About() {
   return (

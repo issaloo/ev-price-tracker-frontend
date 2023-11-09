@@ -1,12 +1,13 @@
 "use client";
+import { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "public/Logo.png";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
-import NavSideMenu from "./NavSideMenu";
+
 import NavBarLink from "./NavBarLink";
 import navObjectList from "./navObjectList.json";
+import NavSideMenu from "./NavSideMenu";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,4 +52,5 @@ const NavBar = () => {
     </nav>
   );
 };
+
 export default NavBar;

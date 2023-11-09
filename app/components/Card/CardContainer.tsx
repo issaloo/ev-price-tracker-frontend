@@ -1,13 +1,13 @@
 "use client";
 import {
+  Button,
   Card,
+  CardActionArea,
+  CardActions,
   CardContent,
   CardMedia,
-  Typography,
-  CardActionArea,
   Divider,
-  CardActions,
-  Button,
+  Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 
