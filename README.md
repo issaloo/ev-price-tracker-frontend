@@ -55,16 +55,44 @@ cd src
 ### Frontend
 
 1. In a terminal, clone [ev-price-tracker-frontend](https://github.com/issaloo/ev-price-tracker-frontend)
-2. Navigate to the root directory
+
+2. Copy .env.local.template to .env.local, and fill in the configs
+
+```Shell
+cp .env.local.template .env.local
+```
+
+3. Navigate to the root directory
 
 ```Shell
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser
+4. Open [http://localhost:3000](http://localhost:3000) with your browser
+
+## Running Production Environment
+
+### Database
+
+Add something here
+
+### Backend
+
+1. Run Django Server
+
+```Shell
+   python manage.py runserver --settings=main.settings.production
+```
+
+### Frontend
+
+Add something here
 
 ## Contributing
 
 ### General Guidelines
 
 FILL IN HERE
+
+Add something about using TSX
+Set up correct linting, then allow development.
