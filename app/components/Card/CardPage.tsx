@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Card,CardContent } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 
 interface Props {
   children: ReactNode;

@@ -1,6 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/Linkedin";
-import { IconButton,Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 
 import CardPage from "../components/Card/CardPage";
 
