@@ -6,7 +6,6 @@ import NavBar from "./components/NavBar/NavBar";
 
 import "./globals.css";
 // ADD AdSense Code
-// ADD google Analytics
 export const metadata = {
   title: "EV Price Tracker | Stay Informed About Electric Vehicle Costs",
   description:
@@ -25,6 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>{/* TODO: Add Google Analytics Code */}</head>
       <body
         className={`h-screen flex flex-col justify-between ${inter.className}`}
       >

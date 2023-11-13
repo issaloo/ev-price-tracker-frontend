@@ -1,5 +1,6 @@
 // TODO: make the domains for photos dynamic
 module.exports = {
+  distDir: "build",
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
