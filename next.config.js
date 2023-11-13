@@ -14,6 +14,15 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["digitalassets.tesla.com", "images.rivian.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "digitalassets.tesla.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.rivian.com",
+      },
+    ],
   },
 };

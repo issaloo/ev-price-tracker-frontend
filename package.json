@@ -7,12 +7,7 @@
     "build": "rm -rf ./build && next build",
     "deploy": "npm run build && gcloud app deploy --project ev-price-tracker-frontend --quiet",
     "start": "next start -p 8080",
-    "gcp-build": "",
-    "lint": "next lint",
-    "prepare": "husky install",
-    "format": "prettier . --write",
-    "lint-staged": "lint-staged",
-    "cz": "cz"
+    "gcp-build": ""
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -26,7 +21,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-spring": "^9.7.3"
+    "react-spring": "^9.7.3",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@commitlint/cli": "17.8.0",
