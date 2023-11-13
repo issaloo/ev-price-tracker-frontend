@@ -11,11 +11,7 @@ const Footer = () => {
         className="mx-auto h-10 w-auto"
       />
       <p className="my-3 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()}{" "}
-        <a href="https://digestiblecontents.com/" className="hover:underline">
-          DigestibleContents™
-        </a>{" "}
-        All rights reserved.
+        © {new Date().getFullYear()} DigestibleContents™ All rights reserved.
       </p>
     </footer>
   );
