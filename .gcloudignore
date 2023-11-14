@@ -38,6 +38,7 @@ _.back
 # Development environment
 
 .env.local
+.env
 /node_modules/
 .husky/
 /app/
