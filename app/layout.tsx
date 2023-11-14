@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import Script from "next/script";
 
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
 
 import "./globals.css";
-// ADD AdSense Code
+
 export const metadata = {
   title: "EV Price Tracker | Stay Informed About Electric Vehicle Costs",
   description:
@@ -24,7 +26,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head>TODO: Add Google Analytics Code</head> */}
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3409882131833467"
+          crossOrigin="anonymous"
+        ></script>
+      </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-736ZH3TYLP" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-736ZH3TYLP');
+        `}
+      </Script>
       <body
         className={`h-screen flex flex-col justify-between ${inter.className}`}
       >
