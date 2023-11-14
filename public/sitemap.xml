@@ -8,7 +8,37 @@
 <url>
   <loc>https://www.evpricetracker.com/</loc>
   <lastmod>2023-11-14T16:36:38+00:00</lastmod>
-  <priority>1.00</priority>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/tesla-model-s</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/tesla-model-x</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/tesla-model-y</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/graph/rivian-r1s</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/graph/rivian-r1t</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.evpricetracker.com/graph/tesla-model-3</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.evpricetracker.com/about</loc>
