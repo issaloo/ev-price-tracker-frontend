@@ -6,23 +6,23 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://ev-price-tracker-frontend.uc.r.appspot.com/</loc>
-  <lastmod>2023-11-14T04:32:45+00:00</lastmod>
+  <loc>https://www.evpricetracker.com/</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://ev-price-tracker-frontend.uc.r.appspot.com/about</loc>
-  <lastmod>2023-11-14T04:32:45+00:00</lastmod>
+  <loc>https://www.evpricetracker.com/about</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ev-price-tracker-frontend.uc.r.appspot.com/faq</loc>
-  <lastmod>2023-11-14T04:32:45+00:00</lastmod>
+  <loc>https://www.evpricetracker.com/faq</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ev-price-tracker-frontend.uc.r.appspot.com/vehicles</loc>
-  <lastmod>2023-11-14T04:32:45+00:00</lastmod>
+  <loc>https://www.evpricetracker.com/vehicles</loc>
+  <lastmod>2023-11-14T16:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
