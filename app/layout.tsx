@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{/* TODO: Add Google Analytics Code */}</head>
+      {/* <head>TODO: Add Google Analytics Code</head> */}
       <body
         className={`h-screen flex flex-col justify-between ${inter.className}`}
       >

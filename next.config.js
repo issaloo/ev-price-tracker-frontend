@@ -1,4 +1,3 @@
-// TODO: make the domains for photos dynamic
 module.exports = {
   distDir: "build",
   typescript: {
