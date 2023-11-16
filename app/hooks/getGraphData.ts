@@ -8,6 +8,7 @@ export async function getGraphData(brandModelPattern: string) {
         ...headers,
         Authorization: `Api-Key ${process.env["NEXT_PUBLIC_API_KEY"]}`,
       },
+      cache: "no-store",
     },
   );
   if (!res.ok) {
