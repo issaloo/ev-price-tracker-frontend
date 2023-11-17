@@ -21,6 +21,10 @@ module.exports = {
         protocol: "https",
         hostname: "images.rivian.com",
       },
+      {
+        protocal: "https",
+        hostname: "lucidmotors.com",
+      },
     ],
   },
 };
