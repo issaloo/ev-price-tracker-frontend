@@ -74,6 +74,12 @@ npm install
 npm run install-code-quality
 ```
 
+For all git commits, run the following
+
+```Shell
+git cz commit
+```
+
 ## Running Frontend Local Environment
 
 1. In the root directory of the frontend repository, copy .env.template to .env.local, and fill in the configs
