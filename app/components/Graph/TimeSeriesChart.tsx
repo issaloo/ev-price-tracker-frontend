@@ -49,8 +49,7 @@ const TimeSeriesChart = ({ data }: any) => {
       />
       <AnimatedAxis orientation="bottom" numTicks={gt_md ? 10 : 4} />
       <AnimatedGrid columns={false} />
-      {/* fill dataKey */}
-      <AnimatedLineSeries dataKey="Line 1" data={data} {...accessors} />
+      <AnimatedLineSeries dataKey="Graph" data={data} {...accessors} />
       <Tooltip
         snapTooltipToDatumX
         snapTooltipToDatumY
@@ -61,7 +60,7 @@ const TimeSeriesChart = ({ data }: any) => {
             <div style={{ marginBottom: "5px" }}>
               $
               {accessors
-                .yAccessor(tooltipData.nearestDatum.datum)
+                .yAccessor(tooltipData?.nearestDatum?.datum)
                 .toLocaleString("en")}
             </div>
             <div
@@ -70,7 +69,7 @@ const TimeSeriesChart = ({ data }: any) => {
               }}
             >
               {accessors
-                .xAccessor(tooltipData.nearestDatum.datum)
+                .xAccessor(tooltipData?.nearestDatum?.datum)
                 .toDateString()
                 .replace(/^\S+\s/, "")}
             </div>
