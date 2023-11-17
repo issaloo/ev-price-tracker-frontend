@@ -1,0 +1,56 @@
+{
+  "name": "ev-price-tracker-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "rm -rf ./build && next build",
+    "deploy": "npm run build && gcloud app deploy --project ev-price-tracker-frontend --quiet",
+    "start": "next start -p 8080",
+    "gcp-build": ""
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
+    "@visx/xychart": "^3.4.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "framer-motion": "^10.16.4",
+    "next": "^14.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "react-spring": "^9.7.3",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.8.0",
+    "@commitlint/config-conventional": "17.8.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.1",
+    "postcss": "^8",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{css,less,scss,html,json,jsx,js,ts,tsx}": [
+      "prettier --write ."
+    ],
+    "**/*.{jsx,js,ts,tsx}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
