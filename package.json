@@ -8,14 +8,10 @@
     "deploy": "npm run build && gcloud app deploy --project ev-price-tracker-frontend --quiet",
     "start": "next start -p 8080",
     "gcp-build": "",
-    "postinstall": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx lint-staged",
-      "commit-msg": "npx --no -- commitlint --edit ${1}",
-      "prepare-commit-msg": "exec < /dev/tty && node_modules/.bin/cz --hook || true"
-    }
+    "h-pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged'",
+    "h-commit-msg": "npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'",
+    "h-prep-commit-msg": "npx husky add .husky/prepare-commit-msg 'exec < /dev/tty && node_modules/.bin/cz --hook || true'",
+    "postinstall": "husky install && npm run h-pre-commit && npm run h-commit-msg && npm run h-prep-commit-msg"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
