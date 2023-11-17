@@ -9,7 +9,7 @@
     "start": "next start -p 8080",
     "gcp-build": "",
     "h-pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged'",
-    "h-commit-msg": "npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'",
+    "h-commit-msg": "npx husky add .husky/commit-msg 'npx --no-install -- commitlint --edit $1'",
     "install-code-quality": "husky install && npm run h-pre-commit && npm run h-commit-msg"
   },
   "dependencies": {
