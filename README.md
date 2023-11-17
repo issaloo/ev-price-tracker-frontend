@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo contains code to ...
+This code repository houses the frontend code for a dynamic web application designed to display Electric Vehicle (EV) prices for various EV models and provide insightful visualizations through graphs. The application aims to offer users a user-friendly interface to explore and compare pricing information for different electric vehicles, aiding them in making informed decisions when considering EV purchases.
 
 ## Technologies
 
@@ -15,84 +15,93 @@ This repo contains code to ...
 - NextJS
   - Quick boilerplate for UI
 
-## Running Local Environment
+## Contributing
 
-### Database
+### General Guidelines
 
-1. In a terminal, proxy redis
+Please take a look at the following guids on writing code:
 
-```Shell
-fly proxy 6379 -a evpricetrackercache
-```
+- [TypeScript Style Guide](https://mkosir.github.io/typescript-style-guide/)
 
-2. In another terminal, connect to redis-cli
+### Set Up Development Environment
 
-```Shell
-redis-cli
-```
-
-Auth into redis data base
+#### Clone frontend, backend, and cache repository
 
 ```Shell
-AUTH <PASSWORD>
+cd ~/GitHub/issaloo
+git clone git@github.com:issaloo/ev-price-tracker-backend.git
+git clone git@github.com:issaloo/ev-price-tracker-frontend.git
+git clone git@github.com:issaloo/ev-price-tracker-cache.git
 ```
 
-### Backend
+#### Set Up Database
 
-1. In a terminal, clone [ev-price-tracker-backend](https://github.com/issaloo/ev-price-tracker-backend)
-2. Navigate to src directory
+1. Navigate to the cache repository
 
 ```Shell
-cd src
+cd ~/GitHub/issaloo/ev-price-tracker-cache
 ```
 
-2. Run Django Server
+2. Follow the [cache environment steps](https://github.com/issaloo/ev-price-tracker-cache) to run the cache locally or in production
+
+#### Set Up Backend
+
+1. Navigate to the backend repository
 
 ```Shell
-   python manage.py runserver --settings=main.settings.local
+cd ~/GitHub/issaloo/ev-price-tracker-backend
 ```
 
-### Frontend
+2. Follow the [backend environment steps](https://github.com/issaloo/ev-price-tracker-backend) to run the backend locally or in production
 
-1. In a terminal, clone [ev-price-tracker-frontend](https://github.com/issaloo/ev-price-tracker-frontend)
+#### Set Up Code Quality Tools
 
-2. Copy .env.local.template to .env.local, and fill in the configs
+1. INSTALL LINTING
+
+2. TODO: INSTALL COMMITIZEN
+
+## Running Frontend Local Environment
+
+1. In the root directory of the frontend repository, copy .env.template to .env.local, and fill in the configs
 
 ```Shell
 cp .env.local.template .env.local
 ```
 
-3. Navigate to the root directory
+3. Run the local environment
 
 ```Shell
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser
+4. Point your browser to [http://localhost:3000](http://localhost:3000)
 
-## Running Production Environment
+## Running Frontend Production Environment
 
-### Database
-
-Add something here
-
-### Backend
-
-1. Run Django Server
+1. In the root directory of the frontend repository, copy .env.template to .env, and fill in the configs
 
 ```Shell
-   python manage.py runserver --settings=main.settings.production
+cp .env.local.template .env
 ```
 
-### Frontend
+2. Build the NextJS production app
 
-Add something here
+```Shell
+npm run build
+```
 
-## Contributing
+3. Run the production environment (local production)
 
-### General Guidelines
+```Shell
+npm run start
+```
 
-FILL IN HERE
+4. Point your browser to [http://localhost:3000](http://localhost:3000)
 
-Add something about using TSX
-Set up correct linting, then allow development.
+## Deploying to Production
+
+1. Deploy to GCP
+
+```Shell
+npm run deploy
+```
