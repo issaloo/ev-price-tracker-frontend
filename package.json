@@ -7,7 +7,10 @@
     "build": "rm -rf ./build && next build",
     "deploy": "npm run build && gcloud app deploy --project ev-price-tracker-frontend --quiet",
     "start": "next start -p 8080",
-    "gcp-build": ""
+    "gcp-build": "",
+    "h-pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged'",
+    "h-commit-msg": "npx husky add .husky/commit-msg 'npx --no-install -- commitlint --edit $1'",
+    "install-code-quality": "husky install && npm run h-pre-commit && npm run h-commit-msg"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -15,7 +18,6 @@
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@visx/xychart": "^3.4.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
     "framer-motion": "^10.16.4",
     "next": "^14.0.2",
     "react": "^18",
@@ -25,8 +27,8 @@
     "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.8.0",
-    "@commitlint/config-conventional": "17.8.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -35,22 +37,12 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^7.0.0",
     "lint-staged": "^15.0.1",
     "postcss": "^8",
     "prettier": "^3.0.3",
     "tailwindcss": "^3",
     "typescript": "^5"
-  },
-  "lint-staged": {
-    "**/*.{css,less,scss,html,json,jsx,js,ts,tsx}": [
-      "prettier --write ."
-    ],
-    "**/*.{jsx,js,ts,tsx}": "eslint --fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

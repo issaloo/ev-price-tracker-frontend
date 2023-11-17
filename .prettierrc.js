@@ -1,6 +1,7 @@
 const config = {
-  trailingComma: "es5",
+  trailingComma: "all",
   tabWidth: 4,
   semi: false,
   singleQuote: true,
+  bracketSpacing: true,
 };
