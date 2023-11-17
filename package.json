@@ -43,12 +43,6 @@
     "tailwindcss": "^3",
     "typescript": "^5"
   },
-  "lint-staged": {
-    "**/*.{css,less,scss,html,json,jsx,js,ts,tsx}": [
-      "prettier --write ."
-    ],
-    "**/*.{jsx,js,ts,tsx}": "eslint --fix"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
