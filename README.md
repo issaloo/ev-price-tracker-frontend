@@ -68,9 +68,11 @@ cd ~/GitHub/issaloo/ev-price-tracker-backend
 npm install
 ```
 
-3.
+3. Install code quality
 
-4. TODO: INSTALL COMMITIZEN
+```Shell
+npm run install-code-quality
+```
 
 ## Running Frontend Local Environment
 
