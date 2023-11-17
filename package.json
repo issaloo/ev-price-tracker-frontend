@@ -11,7 +11,8 @@
     "h-pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged'",
     "h-commit-msg": "npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'",
     "h-prep-commit-msg": "npx husky add .husky/prepare-commit-msg 'exec < /dev/tty && node_modules/.bin/cz --hook || true'",
-    "install-code-quality": "husky install && npm run h-pre-commit && npm run h-commit-msg && npm run h-prep-commit-msg"
+    "install-code-quality": "husky install && npm run h-pre-commit && npm run h-commit-msg && npm run h-prep-commit-msg",
+    "commit": "cz"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
