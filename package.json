@@ -7,7 +7,8 @@
     "build": "rm -rf ./build && next build",
     "deploy": "npm run build && gcloud app deploy --project ev-price-tracker-frontend --quiet",
     "start": "next start -p 8080",
-    "gcp-build": ""
+    "gcp-build": "",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -15,7 +16,6 @@
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@visx/xychart": "^3.4.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
     "framer-motion": "^10.16.4",
     "next": "^14.0.2",
     "react": "^18",
@@ -35,7 +35,8 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "postcss": "^8",
     "prettier": "^3.0.3",
