@@ -54,11 +54,23 @@ cd ~/GitHub/issaloo/ev-price-tracker-backend
 
 2. Follow the [backend environment steps](https://github.com/issaloo/ev-price-tracker-backend) to run the backend locally or in production
 
-#### Set Up Code Quality Tools
+#### Set Up Frontend
 
-1. INSTALL LINTING
+1. Navigate to the frontend repository
 
-2. TODO: INSTALL COMMITIZEN
+```Shell
+cd ~/GitHub/issaloo/ev-price-tracker-backend
+```
+
+2. Install packages
+
+```Shell
+npm install
+```
+
+3.
+
+4. TODO: INSTALL COMMITIZEN
 
 ## Running Frontend Local Environment
 
