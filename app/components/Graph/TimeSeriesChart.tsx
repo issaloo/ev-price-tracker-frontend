@@ -1,5 +1,5 @@
 "use client";
-import { useMediaQuery } from "@mui/material";
+import { Card,useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import {
   AnimatedAxis,
@@ -30,53 +30,67 @@ const TimeSeriesChart = ({ data }: any) => {
   );
   const theme = useTheme();
   const gt_md = useMediaQuery(theme.breakpoints.up("md"));
+  const chartHeight = 400;
+  const margin_left = 85;
+  const margin_top = 20;
+  const margin_bottom = 30;
+  const margin_right = 25;
   return (
-    <XYChart
-      height={gt_md ? 400 : 250} //
-      margin={{ left: 65, top: 20, bottom: 20, right: 0 }}
-      xScale={{ type: "time" }}
-      yScale={{
-        type: "linear",
-        domain: [minPrice, maxPrice * 1.3],
-      }}
-    >
-      <AnimatedAxis
-        orientation="left"
-        label="Base Price"
-        labelClassName="font"
-        labelOffset={35}
-        numTicks={gt_md ? 12 : 6}
-      />
-      <AnimatedAxis orientation="bottom" numTicks={gt_md ? 10 : 4} />
-      <AnimatedGrid columns={false} />
-      <AnimatedLineSeries dataKey="Graph" data={data} {...accessors} />
-      <Tooltip
-        snapTooltipToDatumX
-        snapTooltipToDatumY
-        showVerticalCrosshair
-        showSeriesGlyphs
-        renderTooltip={({ tooltipData }) => (
-          <div>
-            <div style={{ marginBottom: "5px" }}>
-              $
-              {accessors
-                .yAccessor(tooltipData?.nearestDatum?.datum)
-                .toLocaleString("en")}
+    <Card>
+      <XYChart
+        height={gt_md ? chartHeight : 0.625 * chartHeight} //
+        margin={{
+          left: margin_left,
+          top: margin_top,
+          bottom: margin_bottom,
+          right: margin_right,
+        }}
+        xScale={{ type: "time" }}
+        yScale={{
+          type: "linear",
+          domain: [minPrice * 0.7, maxPrice * 1.2],
+          nice: true,
+          zero: false,
+        }}
+      >
+        <AnimatedAxis
+          orientation="left"
+          label="Base Price ($)"
+          labelClassName="font"
+          labelOffset={40}
+          numTicks={gt_md ? 10 : 6}
+        />
+        <AnimatedAxis orientation="bottom" numTicks={gt_md ? 10 : 4} />
+        <AnimatedGrid columns={false} />
+        <AnimatedLineSeries dataKey="Graph" data={data} {...accessors} />
+        <Tooltip
+          snapTooltipToDatumX
+          snapTooltipToDatumY
+          showVerticalCrosshair
+          showSeriesGlyphs
+          renderTooltip={({ tooltipData }) => (
+            <div>
+              <div style={{ marginBottom: "5px" }}>
+                $
+                {accessors
+                  .yAccessor(tooltipData?.nearestDatum?.datum)
+                  .toLocaleString("en")}
+              </div>
+              <div
+                style={{
+                  color: "#999",
+                }}
+              >
+                {accessors
+                  .xAccessor(tooltipData?.nearestDatum?.datum)
+                  .toDateString()
+                  .replace(/^\S+\s/, "")}
+              </div>
             </div>
-            <div
-              style={{
-                color: "#999",
-              }}
-            >
-              {accessors
-                .xAccessor(tooltipData?.nearestDatum?.datum)
-                .toDateString()
-                .replace(/^\S+\s/, "")}
-            </div>
-          </div>
-        )}
-      />
-    </XYChart>
+          )}
+        />
+      </XYChart>
+    </Card>
   );
 };
 export default TimeSeriesChart;
