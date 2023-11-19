@@ -1,5 +1,5 @@
 "use client";
-import { Card,useMediaQuery } from "@mui/material";
+import { Card, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import {
   AnimatedAxis,
@@ -29,21 +29,21 @@ const TimeSeriesChart = ({ data }: any) => {
     },
   );
   const theme = useTheme();
-  const gt_md = useMediaQuery(theme.breakpoints.up("md"));
+  const gtMd = useMediaQuery(theme.breakpoints.up("md"));
   const chartHeight = 400;
-  const margin_left = 85;
-  const margin_top = 20;
-  const margin_bottom = 30;
-  const margin_right = 25;
+  const marginLeft = 85;
+  const marginTop = 20;
+  const marginBottom = 30;
+  const marginRight = 25;
   return (
     <Card>
       <XYChart
-        height={gt_md ? chartHeight : 0.625 * chartHeight} //
+        height={gtMd ? chartHeight : 0.625 * chartHeight}
         margin={{
-          left: margin_left,
-          top: margin_top,
-          bottom: margin_bottom,
-          right: margin_right,
+          left: marginLeft,
+          top: marginTop,
+          bottom: marginBottom,
+          right: marginRight,
         }}
         xScale={{ type: "time" }}
         yScale={{
@@ -58,9 +58,9 @@ const TimeSeriesChart = ({ data }: any) => {
           label="Base Price ($)"
           labelClassName="font"
           labelOffset={40}
-          numTicks={gt_md ? 10 : 6}
+          numTicks={gtMd ? 10 : 6}
         />
-        <AnimatedAxis orientation="bottom" numTicks={gt_md ? 10 : 4} />
+        <AnimatedAxis orientation="bottom" numTicks={gtMd ? 10 : 4} />
         <AnimatedGrid columns={false} />
         <AnimatedLineSeries dataKey="Graph" data={data} {...accessors} />
         <Tooltip
