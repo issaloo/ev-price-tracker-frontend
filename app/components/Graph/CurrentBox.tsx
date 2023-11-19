@@ -1,21 +1,21 @@
 "use client";
 import { Card, Typography } from "@mui/material";
 
-const StatisticsBox = ({
-  statsData,
+const CurrentBox = ({
+  currentData,
   title,
   isDollar,
 }: {
-  statsData: number;
+  currentData: number;
   title: string;
   isDollar: boolean;
 }) => {
   return (
-    <Card className="md:w-56 w-40 md:h-28 h-20">
+    <Card className="w-full md:h-28 h-20">
       <div className="flex flex-col h-full">
         <div className="flex flex-col md:h-8 h-6 justify-center">
           <Typography
-            variant="subtitle2"
+            variant="subtitle1"
             align="left"
             className="mx-2 text-slate-400"
           >
@@ -23,12 +23,14 @@ const StatisticsBox = ({
           </Typography>
         </div>
         <div className="flex flex-col md:h-16 h-12 justify-center">
-          <Typography variant="h5" align="center">
-            {isDollar ? `$${statsData.toLocaleString("en")}` : `${statsData}`}
+          <Typography variant="h4" align="center" className="text-green-800">
+            {isDollar
+              ? `$${currentData.toLocaleString("en")}`
+              : `${currentData}`}
           </Typography>
         </div>
       </div>
     </Card>
   );
 };
-export default StatisticsBox;
+export default CurrentBox;

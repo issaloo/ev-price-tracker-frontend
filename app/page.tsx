@@ -29,18 +29,9 @@ async function Home() {
           Updated {datetime}
         </Typography>
       </div>
-      <div className="sm:mx-36 mx-3">
-        <Typography variant="h6">Instructions</Typography>
-        <Typography variant="subtitle2">
-          Explore the current baseline prices for EVs.
-        </Typography>
-        <Typography variant="subtitle2">
-          Dive deeper into historical price trends by clicking on each card.
-        </Typography>
-      </div>
       {evPriceJson.map((ev: EvPrice) => {
         return (
-          <div className="sm:my-3 my-24 sm:mx-36 mx-3" key={ev.brandName}>
+          <div className="sm:mb-4 mb-8 sm:mx-36 mx-4" key={ev.brandName}>
             <h4 className="ml-4 text-4xl font-bold capitalize">
               {ev.brandName}
             </h4>

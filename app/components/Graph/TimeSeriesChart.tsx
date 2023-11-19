@@ -1,5 +1,5 @@
 "use client";
-import { Card, useMediaQuery } from "@mui/material";
+import { Card, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import {
   AnimatedAxis,
@@ -9,12 +9,18 @@ import {
   XYChart,
 } from "@visx/xychart";
 
-const TimeSeriesChart = ({ data }: any) => {
+const TimeSeriesChart = ({
+  graphData,
+  title,
+}: {
+  graphData: any;
+  title: string;
+}) => {
   const accessors = {
     xAccessor: (d: any) => new Date(`${d.x}T00:00:00`),
     yAccessor: (d: any) => d.y,
   };
-  const { maxPrice, minPrice } = data.reduce(
+  const { maxPrice, minPrice } = graphData.reduce(
     (acc: any, item: any) => {
       return {
         maxPrice: Math.max(acc.maxPrice, item.y),
@@ -37,6 +43,13 @@ const TimeSeriesChart = ({ data }: any) => {
   const marginRight = 25;
   return (
     <Card>
+      <Typography
+        variant="subtitle2"
+        align="center"
+        className="mx-3 mt-3 text-slate-400"
+      >
+        {title}
+      </Typography>
       <XYChart
         height={gtMd ? chartHeight : 0.625 * chartHeight}
         margin={{
@@ -62,7 +75,7 @@ const TimeSeriesChart = ({ data }: any) => {
         />
         <AnimatedAxis orientation="bottom" numTicks={gtMd ? 10 : 4} />
         <AnimatedGrid columns={false} />
-        <AnimatedLineSeries dataKey="Graph" data={data} {...accessors} />
+        <AnimatedLineSeries dataKey="Graph" data={graphData} {...accessors} />
         <Tooltip
           snapTooltipToDatumX
           snapTooltipToDatumY
