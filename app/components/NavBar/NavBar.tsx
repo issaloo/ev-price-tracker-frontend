@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "public/Logo.png";
+import Logo from "public/logo.png";
 
 import NavBarLink from "./NavBarLink";
 import navObjectList from "./navObjectList.json";

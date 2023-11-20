@@ -13,7 +13,7 @@ export const metadata = {
   description:
     "Get daily updates on electric vehicle starting prices from known brands such as Tesla, Rivian, and Lucid. Compare costs, find the best deals, and make informed choices with our real-time EV price tracker. Stay ahead in the electric vehicle market with accurate pricing data.",
   icons: {
-    icon: "/Favicon.png",
+    icon: "/favicon.png",
   },
 };
 
