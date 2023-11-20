@@ -21,13 +21,11 @@ export default async function sitemap() {
   const graphsFlat = graphs.flat(1);
 
   // get static routes
-  const routes = ["", "about", "faq", "privacy", "disclaimer", "vehicles"].map(
-    (route) => ({
-      url: `${URL}/${route}`,
-      lastModified: curDate,
-      priority: route === "" ? 1 : 0.5,
-    }),
-  );
+  const routes = ["", "about", "faq"].map((route) => ({
+    url: `${URL}/${route}`,
+    lastModified: curDate,
+    priority: route === "" ? 1 : 0.5,
+  }));
 
   return [...routes, ...graphsFlat];
 }

@@ -38,8 +38,9 @@ const CardContainer = ({
           <CardMedia
             component="img"
             image={itemDetails.imageSrc}
-            className="object-contain"
+            className="object-fill"
             alt={itemDetails.modelName}
+            sx={{ width: 576 }}
           />
         </div>
         <CardContent className="ml-2 pb-1 pt-2">
