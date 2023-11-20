@@ -44,7 +44,7 @@ export default function RootLayout({
         `}
       </Script>
       <body
-        className={`h-screen flex flex-col justify-between ${inter.className}`}
+        className={`h-full flex flex-col justify-between ${inter.className}`}
       >
         <NavBar />
         <main className="mb-auto">{children}</main>

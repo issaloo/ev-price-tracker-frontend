@@ -11,7 +11,11 @@ async function Graph({ params }: { params: { slug: string } }) {
   if (!graphData) {
     return notFound();
   }
-
+  // Add Tool Tip to YTD
+  // Add typescripts to hooks
+  // Add page for filtering to a desired card type, order by price
+  // Add dark mode
+  // Add pop-up instead of plain text for instructions
   return (
     <div className="flex flex-col">
       <div className="md:mx-36 mx-4">
@@ -41,7 +45,7 @@ async function Graph({ params }: { params: { slug: string } }) {
               className="capitalize"
               href={graphData.modelUrl}
             >
-              See Car Website
+              see car website
             </Button>
           </div>
         </div>
@@ -89,7 +93,7 @@ async function Graph({ params }: { params: { slug: string } }) {
         <div>
           <TimeSeriesChart
             graphData={graphData.graphData}
-            title="Price Trend (YTD)"
+            title="Price Trend YTD"
           />
         </div>
       </div>
