@@ -11,17 +11,6 @@ async function Graph({ params }: { params: { slug: string } }) {
   if (!graphData) {
     return notFound();
   }
-  // const modelName = graphData.modelName;
-  // const brandName = graphData.brandName;
-  // const modelUrl = graphData.modelUrl;
-  // const curPrice = graphData.curPrice;
-  // const avgPriceYTD = graphData.avgPriceYTD;
-  // const minPriceYTD = graphData.minPriceYTD;
-  // const maxPriceYTD = graphData.maxPriceYTD;
-  // const minPrice = graphData.minPrice;
-  // const maxPrice = graphData.maxPrice;
-  // const changeYTD = graphData.changeYTD;
-  // const graphDataXY = graphData.graphData;
 
   return (
     <div className="flex flex-col">
