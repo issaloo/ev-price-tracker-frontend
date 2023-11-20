@@ -9,11 +9,13 @@ import {
   XYChart,
 } from "@visx/xychart";
 
+import { ModelGraphDetail } from "./types/modelGraphDetail";
+
 const TimeSeriesChart = ({
   graphData,
   title,
 }: {
-  graphData: any;
+  graphData: ModelGraphDetail;
   title: string;
 }) => {
   const accessors = {
