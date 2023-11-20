@@ -23,7 +23,7 @@ const CurrentBox = ({
           </Typography>
         </div>
         <div className="flex flex-col md:h-16 h-12 justify-center">
-          <Typography variant="h4" align="center" className="text-green-800">
+          <Typography variant="h4" align="center" className="text-green-400">
             {isDollar
               ? `$${currentData.toLocaleString("en")}`
               : `${currentData}`}

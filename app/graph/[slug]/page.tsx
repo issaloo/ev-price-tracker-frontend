@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { notFound } from "next/navigation";
 
 import CurrentBox from "../../components/Graph/CurrentBox";
@@ -11,34 +11,49 @@ async function Graph({ params }: { params: { slug: string } }) {
   if (!graphData) {
     return notFound();
   }
-  const brandName = "rivian";
-  const modelName = "R1T";
-  const curPrice = 75000;
-  const avgPriceYTD = 80000;
-  const minPriceYTD = 75000;
-  const maxPriceYTD = 90000;
-  const changeYTD = 25;
-  const minPrice = 75000;
-  const maxPrice = 90000;
-  // ADD TOOL TIP TO YTD
+  const modelName = graphData.modelName;
+  const brandName = graphData.brandName;
+  const modelUrl = graphData.modelUrl;
+  const curPrice = graphData.curPrice;
+  const avgPriceYTD = graphData.avgPriceYTD;
+  const minPriceYTD = graphData.minPriceYTD;
+  const maxPriceYTD = graphData.maxPriceYTD;
+  const minPrice = graphData.minPrice;
+  const maxPrice = graphData.maxPrice;
+  const changeYTD = graphData.changeYTD;
+  const graphDataXY = graphData.graphData;
+  console.log(modelName);
+
   return (
     <div className="flex flex-col">
       <div className="md:mx-36 mx-4">
-        <div className="my-5">
-          <Typography
-            variant="h6"
-            className="font-bold uppercase text-slate-500"
-          >
-            {brandName}
-          </Typography>
-          <Typography
-            variant="h4"
-            className={`font-medium ${
-              modelName.indexOf(" ") >= 0 ? "capitalize" : "uppercase"
-            }`}
-          >
-            {modelName}
-          </Typography>
+        <div className="flex flex-row justify-between my-5">
+          <div className="flex flex-col">
+            <Typography
+              variant="h6"
+              className="font-bold uppercase text-slate-500"
+            >
+              {brandName}
+            </Typography>
+            <Typography
+              variant="h4"
+              className={`font-medium ${
+                modelName.indexOf(" ") >= 0 ? "capitalize" : "uppercase"
+              }`}
+            >
+              {modelName}
+            </Typography>
+          </div>
+          <div className="h-full align-center">
+            <Button
+              size="small"
+              variant="contained"
+              className="capitalize"
+              href={modelUrl}
+            >
+              See Car Website
+            </Button>
+          </div>
         </div>
         <div className="flex flex-row mb-3 justify-center">
           <CurrentBox
@@ -47,28 +62,28 @@ async function Graph({ params }: { params: { slug: string } }) {
             isDollar={true}
           />
         </div>
-        <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-2">
+        <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-3">
           <StatisticsBox
             statsData={maxPriceYTD}
-            title="Max Price (YTD)"
+            title="Highest YTD"
             isDollar={true}
           />
           <StatisticsBox
             statsData={minPriceYTD}
-            title="Min Price (YTD)"
+            title="Lowest YTD"
             isDollar={true}
           />
           <StatisticsBox
             statsData={avgPriceYTD}
-            title="Avg Price (YTD)"
+            title="Average YTD"
             isDollar={true}
           />
         </div>
-        <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-2">
+        <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-3">
           <StatisticsBox
-            statsData={changeYTD}
-            title="Changes (YTD)"
-            isDollar={false}
+            statsData={maxPrice}
+            title="Highest Ever"
+            isDollar={true}
           />
           <StatisticsBox
             statsData={minPrice}
@@ -76,13 +91,13 @@ async function Graph({ params }: { params: { slug: string } }) {
             isDollar={true}
           />
           <StatisticsBox
-            statsData={maxPrice}
-            title="Highest Ever"
-            isDollar={true}
+            statsData={changeYTD}
+            title="Changes YTD"
+            isDollar={false}
           />
         </div>
         <div>
-          <TimeSeriesChart graphData={graphData} title="Price Trend (YTD)" />
+          <TimeSeriesChart graphData={graphDataXY} title="Price Trend (YTD)" />
         </div>
       </div>
     </div>

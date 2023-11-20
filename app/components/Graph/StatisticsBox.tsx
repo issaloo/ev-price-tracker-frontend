@@ -11,7 +11,7 @@ const StatisticsBox = ({
   isDollar: boolean;
 }) => {
   return (
-    <Card className="md:w-56 w-40 md:h-28 h-20">
+    <Card className="flex-1 md:h-28 h-20">
       <div className="flex flex-col h-full">
         <div className="flex flex-col md:h-8 h-6 justify-center">
           <Typography
@@ -24,7 +24,11 @@ const StatisticsBox = ({
         </div>
         <div className="flex flex-col md:h-16 h-12 justify-center">
           <Typography variant="h5" align="center">
-            {isDollar ? `$${statsData.toLocaleString("en")}` : `${statsData}`}
+            {isDollar
+              ? `$${statsData.toLocaleString("en", {
+                  maximumFractionDigits: 2,
+                })}`
+              : `${statsData}`}
           </Typography>
         </div>
       </div>
