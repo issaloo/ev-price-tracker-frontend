@@ -11,18 +11,17 @@ async function Graph({ params }: { params: { slug: string } }) {
   if (!graphData) {
     return notFound();
   }
-  const modelName = graphData.modelName;
-  const brandName = graphData.brandName;
-  const modelUrl = graphData.modelUrl;
-  const curPrice = graphData.curPrice;
-  const avgPriceYTD = graphData.avgPriceYTD;
-  const minPriceYTD = graphData.minPriceYTD;
-  const maxPriceYTD = graphData.maxPriceYTD;
-  const minPrice = graphData.minPrice;
-  const maxPrice = graphData.maxPrice;
-  const changeYTD = graphData.changeYTD;
-  const graphDataXY = graphData.graphData;
-  console.log(modelName);
+  // const modelName = graphData.modelName;
+  // const brandName = graphData.brandName;
+  // const modelUrl = graphData.modelUrl;
+  // const curPrice = graphData.curPrice;
+  // const avgPriceYTD = graphData.avgPriceYTD;
+  // const minPriceYTD = graphData.minPriceYTD;
+  // const maxPriceYTD = graphData.maxPriceYTD;
+  // const minPrice = graphData.minPrice;
+  // const maxPrice = graphData.maxPrice;
+  // const changeYTD = graphData.changeYTD;
+  // const graphDataXY = graphData.graphData;
 
   return (
     <div className="flex flex-col">
@@ -33,15 +32,17 @@ async function Graph({ params }: { params: { slug: string } }) {
               variant="h6"
               className="font-bold uppercase text-slate-500"
             >
-              {brandName}
+              {graphData.brandName}
             </Typography>
             <Typography
               variant="h4"
               className={`font-medium ${
-                modelName.indexOf(" ") >= 0 ? "capitalize" : "uppercase"
+                graphData.modelName.indexOf(" ") >= 0
+                  ? "capitalize"
+                  : "uppercase"
               }`}
             >
-              {modelName}
+              {graphData.modelName}
             </Typography>
           </div>
           <div className="h-full align-center">
@@ -49,7 +50,7 @@ async function Graph({ params }: { params: { slug: string } }) {
               size="small"
               variant="contained"
               className="capitalize"
-              href={modelUrl}
+              href={graphData.modelUrl}
             >
               See Car Website
             </Button>
@@ -57,47 +58,50 @@ async function Graph({ params }: { params: { slug: string } }) {
         </div>
         <div className="flex flex-row mb-3 justify-center">
           <CurrentBox
-            currentData={curPrice}
+            currentData={graphData.curPrice}
             title="Current Price"
             isDollar={true}
           />
         </div>
         <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-3">
           <StatisticsBox
-            statsData={maxPriceYTD}
+            statsData={graphData.maxPriceYTD}
             title="Highest YTD"
             isDollar={true}
           />
           <StatisticsBox
-            statsData={minPriceYTD}
+            statsData={graphData.minPriceYTD}
             title="Lowest YTD"
             isDollar={true}
           />
           <StatisticsBox
-            statsData={avgPriceYTD}
+            statsData={graphData.avgPriceYTD}
             title="Average YTD"
             isDollar={true}
           />
         </div>
         <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-3">
           <StatisticsBox
-            statsData={maxPrice}
+            statsData={graphData.maxPrice}
             title="Highest Ever"
             isDollar={true}
           />
           <StatisticsBox
-            statsData={minPrice}
+            statsData={graphData.minPrice}
             title="Lowest Ever"
             isDollar={true}
           />
           <StatisticsBox
-            statsData={changeYTD}
+            statsData={graphData.changeYTD}
             title="Changes YTD"
             isDollar={false}
           />
         </div>
         <div>
-          <TimeSeriesChart graphData={graphDataXY} title="Price Trend (YTD)" />
+          <TimeSeriesChart
+            graphData={graphData.graphData}
+            title="Price Trend (YTD)"
+          />
         </div>
       </div>
     </div>
