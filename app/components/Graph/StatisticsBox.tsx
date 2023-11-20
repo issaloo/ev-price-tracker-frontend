@@ -26,7 +26,7 @@ const StatisticsBox = ({
           <Typography variant="h5" align="center">
             {isDollar
               ? `$${statsData.toLocaleString("en", {
-                  maximumFractionDigits: 2,
+                  maximumFractionDigits: 0,
                 })}`
               : `${statsData}`}
           </Typography>

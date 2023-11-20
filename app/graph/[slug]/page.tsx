@@ -38,15 +38,26 @@ async function Graph({ params }: { params: { slug: string } }) {
               {graphData.modelName}
             </Typography>
           </div>
-          <div className="h-full align-center">
+          <div className="flex flex-col h-full align-center space-y-1">
             <Button
               size="small"
               variant="contained"
               className="capitalize"
+              color="secondary"
               href={graphData.modelUrl}
             >
               see car website
             </Button>
+            {graphData.modelUrl.includes("tesla") && (
+              <Button
+                size="small"
+                variant="contained"
+                className="capitalize"
+                href="https://www.tesla.com/referral/issac66626"
+              >
+                tesla referral
+              </Button>
+            )}
           </div>
         </div>
         <div className="flex flex-row mb-3 justify-center">

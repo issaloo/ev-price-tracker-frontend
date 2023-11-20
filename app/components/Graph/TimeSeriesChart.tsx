@@ -36,6 +36,7 @@ const TimeSeriesChart = ({
   );
   const theme = useTheme();
   const gtMd = useMediaQuery(theme.breakpoints.up("md"));
+  const gtLg = useMediaQuery(theme.breakpoints.up("lg"));
   const chartHeight = 400;
   const marginLeft = 85;
   const marginTop = 20;
@@ -73,7 +74,7 @@ const TimeSeriesChart = ({
           labelOffset={40}
           numTicks={gtMd ? 10 : 6}
         />
-        <AnimatedAxis orientation="bottom" numTicks={gtMd ? 10 : 4} />
+        <AnimatedAxis orientation="bottom" numTicks={gtLg ? 10 : 4} />
         <AnimatedGrid columns={false} />
         <AnimatedLineSeries dataKey="Graph" data={graphData} {...accessors} />
         <Tooltip
