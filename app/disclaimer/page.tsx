@@ -2,6 +2,15 @@ import { Typography } from "@mui/material";
 
 import CardPage from "../components/Card/CardPage";
 
+export const metadata = {
+  title: "EV Price Tracker | Disclaimers",
+  description:
+    "Read our concise disclaimer page for important information regarding the use of evpricetracker.com. Understand terms, limitations, and responsibilities before proceeding. Clarify your experience with our straightforward disclaimer.",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function About() {
   return (
     <CardPage>

@@ -5,6 +5,15 @@ import CardQA from "../components/Card/CardQA";
 
 import qaObjectList from "./qaObjectList.json";
 
+export const metadata = {
+  title: "EV Price Tracker | FAQ",
+  description:
+    "Get quick answers to common questions about evpricetracker.com in our Frequently Asked Questions (FAQ) section. ",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 function Usage() {
   return (
     <CardPage>

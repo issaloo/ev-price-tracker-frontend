@@ -1,3 +1,4 @@
+// TODO: add to hook later
 import { ModelGraphDetail } from "./modelGraphDetail";
 export type ModelGraph = {
   brandName: string;

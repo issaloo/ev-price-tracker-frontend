@@ -4,6 +4,14 @@ import { IconButton, Typography } from "@mui/material";
 
 import CardPage from "../components/Card/CardPage";
 
+export const metadata = {
+  title: "EV Price Tracker | About",
+  description: "Discover the creator of evpricetracker.com.",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function About() {
   return (
     <CardPage>

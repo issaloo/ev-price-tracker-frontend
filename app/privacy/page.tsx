@@ -6,6 +6,15 @@ import CardQA from "../components/Card/CardQA";
 
 import privacyObjectList from "./privacyObjectList.json";
 
+export const metadata = {
+  title: "EV Price Tracker | Privacy Policy",
+  description:
+    "Review our Privacy Policy to understand how we handle your data on evpricetracker.com. Learn about data protection, usage, and your rights. Ensure transparency and trust in your online experience with our privacy commitment.",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function About() {
   return (
     <CardPage>
@@ -19,8 +28,7 @@ export default function About() {
         This Privacy Policy explains how we collect, use, and disclose
         information obtained through the use of advertisements served on our
         website, particularly through third-party vendors such as Google
-        AdSense. By accessing or using our website, you consent to the terms
-        outlined in this Privacy Policy.
+        AdSense.
       </Typography>
 
       {privacyObjectList.map((qaObject: any) => {

@@ -23,7 +23,7 @@ const CardContainer = ({
     router.push(`graph/${brandModelPattern}`);
   };
 
-  const brandModelPattern = `${brandName.toLowerCase()}-${itemDetails.modelName
+  const brandModelPattern = `${brandName.toLowerCase()}/${itemDetails.modelName
     .replace(/\s+/g, "-")
     .toLowerCase()}`;
   return (

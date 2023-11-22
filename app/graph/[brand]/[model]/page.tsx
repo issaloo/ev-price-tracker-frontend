@@ -1,13 +1,40 @@
 import { Button, Typography } from "@mui/material";
 import { notFound } from "next/navigation";
 
-import CurrentBox from "../../components/Graph/CurrentBox";
-import StatisticsBox from "../../components/Graph/StatisticsBox";
-import TimeSeriesChart from "../../components/Graph/TimeSeriesChart";
-import { getGraphData } from "../../hooks/getGraphData";
+import { GraphParams } from "../../..//types/graphParams";
+import CurrentBox from "../../../components/Graph/CurrentBox";
+import StatisticsBox from "../../../components/Graph/StatisticsBox";
+import TimeSeriesChart from "../../../components/Graph/TimeSeriesChart";
+import { getGraphData } from "../../../hooks/getGraphData";
 
-async function Graph({ params }: { params: { slug: string } }) {
-  const graphData = await getGraphData(params.slug.replace(/-/g, "_"));
+export async function generateMetadata({ params }: { params: GraphParams }) {
+  const brandParams = params.brand.replace(/-/g, " ").split(" ");
+  const brandName = brandParams
+    .map((word) => {
+      return word[0].toUpperCase() + word.substring(1);
+    })
+    .join(" ");
+  const modelParams = params.model.replace(/-/g, " ").split(" ");
+  const modelName = modelParams
+    .map((word) => {
+      return word[0].toUpperCase() + word.substring(1);
+    })
+    .join(" ");
+  return {
+    title: `EV Price Tracker | ${brandName} - ${modelName}`,
+    description: `Explore the dynamic pricing trends and key statistics of the ${brandName} ${modelName} over time. Dive into historical data to track price fluctuations and gain valuable insights into this electric vehicle.`,
+    icons: {
+      icon: "/favicon.png",
+    },
+  };
+}
+
+async function Graph({ params }: { params: GraphParams }) {
+  const graphKey = `${params.brand.replace(/-/g, "_")}_${params.model.replace(
+    /-/g,
+    "_",
+  )}`;
+  const graphData = await getGraphData(graphKey);
   if (!graphData) {
     return notFound();
   }
