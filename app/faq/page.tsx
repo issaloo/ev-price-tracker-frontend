@@ -17,7 +17,7 @@ export const metadata = {
 function Usage() {
   return (
     <CardPage>
-      <Typography variant="h5" className="mb-2">
+      <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
         Frequently Asked Questions
       </Typography>
       {qaObjectList.map((qaObject: any) => {

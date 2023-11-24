@@ -38,7 +38,6 @@ async function Graph({ params }: { params: GraphParams }) {
   if (!graphData) {
     return notFound();
   }
-  // Add Tool Tip to YTD
   // Add typescripts to hooks
   // Add page for filtering to a desired card type, order by price
   // Add dark mode
@@ -50,13 +49,13 @@ async function Graph({ params }: { params: GraphParams }) {
           <div className="flex flex-col">
             <Typography
               variant="h6"
-              className="font-bold uppercase text-slate-500"
+              className="font-bold uppercase text-slate-500 dark:text-slate-300"
             >
               {graphData.brandName}
             </Typography>
             <Typography
               variant="h4"
-              className={`font-medium ${
+              className={`font-medium text-black dark:text-white ${
                 graphData.modelName.indexOf(" ") >= 0
                   ? "capitalize"
                   : "uppercase"
@@ -97,17 +96,17 @@ async function Graph({ params }: { params: GraphParams }) {
         <div className="flex flex-row justify-between mb-3 md:space-x-5 space-x-3">
           <StatisticsBox
             statsData={graphData.maxPriceYTD}
-            title="Highest YTD"
+            title="Highest YTD*"
             isDollar={true}
           />
           <StatisticsBox
             statsData={graphData.minPriceYTD}
-            title="Lowest YTD"
+            title="Lowest YTD*"
             isDollar={true}
           />
           <StatisticsBox
             statsData={graphData.avgPriceYTD}
-            title="Average YTD"
+            title="Average YTD*"
             isDollar={true}
           />
         </div>
@@ -124,15 +123,21 @@ async function Graph({ params }: { params: GraphParams }) {
           />
           <StatisticsBox
             statsData={graphData.changeYTD}
-            title="Changes YTD"
+            title="Changes YTD*"
             isDollar={false}
           />
         </div>
         <div>
           <TimeSeriesChart
             graphData={graphData.graphData}
-            title="Price Trend YTD"
+            title="Price Trend YTD*"
           />
+        </div>
+        <div>
+          <Typography variant="caption" color="gray">
+            *Year to Date (YTD) refers to the trailing 12 months to the present
+            date
+          </Typography>
         </div>
       </div>
     </div>

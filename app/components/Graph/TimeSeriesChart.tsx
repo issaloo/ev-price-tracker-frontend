@@ -43,11 +43,11 @@ const TimeSeriesChart = ({
   const marginBottom = 30;
   const marginRight = 25;
   return (
-    <Card>
+    <Card className="bg-white dark:bg-slate-800">
       <Typography
         variant="subtitle2"
         align="center"
-        className="mx-3 mt-3 text-slate-400"
+        className="mx-3 mt-3 text-slate-400 dark:text-white"
       >
         {title}
       </Typography>
@@ -70,7 +70,7 @@ const TimeSeriesChart = ({
         <AnimatedAxis
           orientation="left"
           label="Base Price ($)"
-          labelClassName="font"
+          labelClassName="LEFT OFF HERE"
           labelOffset={40}
           numTicks={gtMd ? 10 : 6}
         />

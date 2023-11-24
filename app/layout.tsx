@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
 
+import { ThemeProvider } from "./components/DarkMode/ThemeProvider";
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
 
@@ -37,9 +38,11 @@ export default function RootLayout({
       <body
         className={`h-full flex flex-col justify-between ${inter.className}`}
       >
-        <NavBar />
-        <main className="mb-auto">{children}</main>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NavBar />
+          <main className="mb-auto">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

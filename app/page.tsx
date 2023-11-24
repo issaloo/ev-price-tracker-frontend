@@ -27,16 +27,18 @@ async function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full flex flex-row justify-end mt-2">
-        <Typography
-          color="slategray"
-          variant="caption"
-          className="pr-10"
-          sx={{ display: "flex", alignItems: "center" }}
-        >
-          <RefreshIcon fontSize="small" className="mr-1" />
-          Updated {datetime}
-        </Typography>
+      <div className="flex flex-row mt-2 sm:mx-36 mx-4 justify-end">
+        <div>
+          <Typography
+            color="slategray"
+            variant="caption"
+            className="pr-3"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <RefreshIcon fontSize="small" />
+            Updated {datetime}
+          </Typography>
+        </div>
       </div>
       {evPriceJson.map((ev: EvPrice) => {
         return (

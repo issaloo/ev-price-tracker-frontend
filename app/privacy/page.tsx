@@ -18,10 +18,13 @@ export const metadata = {
 export default function About() {
   return (
     <CardPage>
-      <Typography variant="h5" className="mb-2">
+      <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
         Privacy Policy
       </Typography>
-      <Typography variant="body1" className="mb-2">
+      <Typography
+        variant="body1"
+        className="mb-2 text-black dark:text-slate-400"
+      >
         Last Updated: 2023-11-14
         <br />
         <br />
@@ -34,7 +37,7 @@ export default function About() {
       {privacyObjectList.map((qaObject: any) => {
         return <CardQA key={qaObject.question} qaObject={qaObject} />;
       })}
-      <Typography variant="body1">
+      <Typography variant="body1" className="text-black dark:text-slate-400">
         If you have any questions or concerns regarding this Privacy Policy,
         please contact us at{" "}
         <Link

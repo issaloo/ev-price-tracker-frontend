@@ -15,10 +15,13 @@ export const metadata = {
 export default function About() {
   return (
     <CardPage>
-      <Typography variant="h5" className="mb-2">
+      <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
         About Me
       </Typography>
-      <Typography variant="body1" className="mb-4">
+      <Typography
+        variant="body1"
+        className="mb-4 text-black dark:text-slate-400"
+      >
         I&rsquo;m IL, a mechanical engineer turned programmer.
         <br />
         <br />

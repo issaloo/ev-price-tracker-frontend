@@ -14,10 +14,13 @@ export const metadata = {
 export default function About() {
   return (
     <CardPage>
-      <Typography variant="h5" className="mb-2">
+      <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
         Disclaimer
       </Typography>
-      <Typography variant="body1" className="mb-4">
+      <Typography
+        variant="body1"
+        className="mb-4 text-black dark:text-slate-400"
+      >
         The information provided on this website regarding electric vehicle (EV)
         prices over time is for informational purposes only. While we strive to
         ensure the accuracy and timeliness of the data presented, we cannot
