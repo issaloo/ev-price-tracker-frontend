@@ -89,7 +89,7 @@ const TimeSeriesChart = ({
           dataKey="Graph"
           data={graphData}
           {...accessors}
-          className="stroke-blue-400 dark:stroke-red-400 red"
+          className="stroke-blue-400 dark:stroke-blue-300"
         />
         <Tooltip
           snapTooltipToDatumX

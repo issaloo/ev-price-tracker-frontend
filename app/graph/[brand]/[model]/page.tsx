@@ -41,6 +41,7 @@ async function Graph({ params }: { params: GraphParams }) {
   // Add typescripts to hooks
   // Add pop-up instead of plain text for instructions
   // Left off here
+  // Update the NavSideMenu to close when you click back
   return (
     <div className="flex flex-col">
       <div className="md:mx-36 mx-4">

@@ -58,7 +58,7 @@ const CardContainer = ({
           <div className="flex flex-row items-center">
             <Typography
               variant="h5"
-              className="text-blue-800 dark:text-red-300 font-bold mr-2"
+              className="text-blue-800 dark:text-blue-400 font-bold mr-2"
             >
               ${itemDetails.currentPrice.toLocaleString("en")}
             </Typography>
@@ -80,7 +80,7 @@ const CardContainer = ({
             </Typography>
             <Typography
               variant="body1"
-              className="text-slate-500 dark:text-red-200"
+              className="text-slate-500 dark:text-blue-200"
             >
               {itemDetails.previousPrice === "none"
                 ? "None"
