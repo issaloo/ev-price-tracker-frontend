@@ -36,17 +36,22 @@ const TimeSeriesChart = ({
   );
   const theme = useTheme();
   const gtMd = useMediaQuery(theme.breakpoints.up("md"));
+  const gtLg = useMediaQuery(theme.breakpoints.up("lg"));
   const chartHeight = 400;
   const marginLeft = 85;
   const marginTop = 20;
   const marginBottom = 30;
   const marginRight = 25;
+  const tickLabelProps = {
+    fill: "gray",
+  };
+
   return (
-    <Card>
+    <Card className="bg-white dark:bg-slate-800">
       <Typography
         variant="subtitle2"
         align="center"
-        className="mx-3 mt-3 text-slate-400"
+        className="mx-3 mt-3 text-slate-400 dark:text-white"
       >
         {title}
       </Typography>
@@ -69,13 +74,23 @@ const TimeSeriesChart = ({
         <AnimatedAxis
           orientation="left"
           label="Base Price ($)"
-          labelClassName="font"
           labelOffset={40}
           numTicks={gtMd ? 10 : 6}
+          labelClassName="fill-black dark:fill-white"
+          tickLabelProps={tickLabelProps}
         />
-        <AnimatedAxis orientation="bottom" numTicks={gtMd ? 10 : 4} />
+        <AnimatedAxis
+          orientation="bottom"
+          numTicks={gtLg ? 10 : 4}
+          tickLabelProps={tickLabelProps}
+        />
         <AnimatedGrid columns={false} />
-        <AnimatedLineSeries dataKey="Graph" data={graphData} {...accessors} />
+        <AnimatedLineSeries
+          dataKey="Graph"
+          data={graphData}
+          {...accessors}
+          className="stroke-blue-400 dark:stroke-red-400 red"
+        />
         <Tooltip
           snapTooltipToDatumX
           snapTooltipToDatumY

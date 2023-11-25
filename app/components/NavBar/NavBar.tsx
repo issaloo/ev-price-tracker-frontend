@@ -3,7 +3,9 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "public/Logo.png";
+import Logo from "public/logo.png";
+
+import { ThemeSwitcher } from "../DarkMode/ThemeSwitcher";
 
 import NavBarLink from "./NavBarLink";
 import navObjectList from "./navObjectList.json";
@@ -17,11 +19,19 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full py-3 h-24 shadow-xl bg-white z-50">
+    <nav className="sticky top-0 w-full h-24 shadow-xl bg-white dark:bg-slate-700 backdrop-blur-md bg-opacity-60 dark:bg-opacity-60 z-50 backdrop-filter ">
       <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
-        <Link href="/">
-          <Image src={Logo} alt="Logo" height="60" className="cursor-pointer" />
-        </Link>
+        <div className="flex flex-row">
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="Logo"
+              height="60"
+              className="cursor-pointer"
+            />
+          </Link>
+          <ThemeSwitcher />
+        </div>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex">
             {navObjectList.map((navObject: any) => {
@@ -31,7 +41,10 @@ const NavBar = () => {
             })}
           </ul>
         </div>
-        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
+        <div
+          onClick={handleNav}
+          className="sm:hidden cursor-pointer pl-24 flex flex-row space-x-5"
+        >
           <AiOutlineMenu size={25} />
         </div>
         <div

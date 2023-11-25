@@ -23,12 +23,12 @@ const CardContainer = ({
     router.push(`graph/${brandModelPattern}`);
   };
 
-  const brandModelPattern = `${brandName.toLowerCase()}-${itemDetails.modelName
+  const brandModelPattern = `${brandName.toLowerCase()}/${itemDetails.modelName
     .replace(/\s+/g, "-")
     .toLowerCase()}`;
   return (
     <Card
-      className="mx-2 my-2 h-96 sm:h-72 sm:w-64"
+      className="mx-2 my-2 h-96 sm:h-72 sm:w-64 bg-white dark:bg-slate-700"
       key={itemDetails.modelName}
       onClick={handleClick}
       raised
@@ -47,7 +47,7 @@ const CardContainer = ({
           <Divider className="mb-2" />
           <Typography
             variant="h6"
-            className={`font-medium ${
+            className={`font-medium text-black dark:text-white ${
               itemDetails.modelName.indexOf(" ") >= 0
                 ? "capitalize"
                 : "uppercase"
@@ -56,16 +56,32 @@ const CardContainer = ({
             {itemDetails.modelName}
           </Typography>
           <div className="flex flex-row items-center">
-            <Typography variant="h5" className="text-blue-800 font-bold mr-2">
+            <Typography
+              variant="h5"
+              className="text-blue-800 dark:text-red-300 font-bold mr-2"
+            >
               ${itemDetails.currentPrice.toLocaleString("en")}
             </Typography>
-            <Typography variant="caption">(Base Price)</Typography>
+            <Typography
+              variant="caption"
+              className="text-black dark:text-white"
+            >
+              (Base Price)
+            </Typography>
           </div>
         </CardContent>
         <CardContent className="flex flex-row pb-3 pt-1">
           <div className="mr-4 ml-2">
-            <Typography variant="caption">Previous</Typography>
-            <Typography variant="body1" className="text-slate-500">
+            <Typography
+              variant="caption"
+              className="text-black dark:text-white"
+            >
+              Previous
+            </Typography>
+            <Typography
+              variant="body1"
+              className="text-slate-500 dark:text-red-200"
+            >
               {itemDetails.previousPrice === "none"
                 ? "None"
                 : `$${itemDetails.previousPrice.toLocaleString("en")}`}
@@ -73,7 +89,10 @@ const CardContainer = ({
           </div>
           {itemDetails.previousPrice !== "none" && (
             <div className="mr-4">
-              <Typography variant="caption">
+              <Typography
+                variant="caption"
+                className="text-black dark:text-white"
+              >
                 {itemDetails.currentPrice < itemDetails.previousPrice
                   ? "Discount"
                   : "Increase"}
@@ -82,7 +101,7 @@ const CardContainer = ({
                 variant="body1"
                 className={
                   itemDetails.currentPrice < itemDetails.previousPrice
-                    ? "text-green-500"
+                    ? "text-green-500 dark:text-green-200"
                     : "text-red-500"
                 }
               >

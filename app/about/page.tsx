@@ -4,13 +4,24 @@ import { IconButton, Typography } from "@mui/material";
 
 import CardPage from "../components/Card/CardPage";
 
+export const metadata = {
+  title: "EV Price Tracker | About",
+  description: "Discover the creator of evpricetracker.com.",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function About() {
   return (
     <CardPage>
-      <Typography variant="h5" className="mb-2">
+      <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
         About Me
       </Typography>
-      <Typography variant="body1" className="mb-4">
+      <Typography
+        variant="body1"
+        className="mb-4 text-black dark:text-slate-400"
+      >
         I&rsquo;m IL, a mechanical engineer turned programmer.
         <br />
         <br />
@@ -27,10 +38,15 @@ export default function About() {
       <IconButton
         aria-label="linkedin"
         href="https://www.linkedin.com/in/issac-loo-120b0163/"
+        className="dark:hover:bg-slate-400"
       >
         <LinkedInIcon />
       </IconButton>
-      <IconButton aria-label="github" href="https://github.com/issaloo">
+      <IconButton
+        aria-label="github"
+        href="https://github.com/issaloo"
+        className="dark:hover:bg-slate-400"
+      >
         <GitHubIcon />
       </IconButton>
     </CardPage>

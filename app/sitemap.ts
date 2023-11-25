@@ -21,7 +21,7 @@ export default async function sitemap() {
   const graphsFlat = graphs.flat(1);
 
   // get static routes
-  const routes = ["", "about", "faq"].map((route) => ({
+  const routes = ["", "about", "faq", "privacy", "disclaimer"].map((route) => ({
     url: `${URL}/${route}`,
     lastModified: curDate,
     priority: route === "" ? 1 : 0.5,
