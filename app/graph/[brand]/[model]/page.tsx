@@ -39,9 +39,8 @@ async function Graph({ params }: { params: GraphParams }) {
     return notFound();
   }
   // Add typescripts to hooks
-  // Add page for filtering to a desired card type, order by price
-  // Add dark mode
   // Add pop-up instead of plain text for instructions
+  // Left off here
   return (
     <div className="flex flex-col">
       <div className="md:mx-36 mx-4">
