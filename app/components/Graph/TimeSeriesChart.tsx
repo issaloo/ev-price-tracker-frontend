@@ -42,6 +42,10 @@ const TimeSeriesChart = ({
   const marginTop = 20;
   const marginBottom = 30;
   const marginRight = 25;
+  const tickLabelProps = {
+    fill: "gray",
+  };
+
   return (
     <Card className="bg-white dark:bg-slate-800">
       <Typography
@@ -70,13 +74,23 @@ const TimeSeriesChart = ({
         <AnimatedAxis
           orientation="left"
           label="Base Price ($)"
-          labelClassName="LEFT OFF HERE"
           labelOffset={40}
           numTicks={gtMd ? 10 : 6}
+          labelClassName="fill-black dark:fill-white"
+          tickLabelProps={tickLabelProps}
         />
-        <AnimatedAxis orientation="bottom" numTicks={gtLg ? 10 : 4} />
+        <AnimatedAxis
+          orientation="bottom"
+          numTicks={gtLg ? 10 : 4}
+          tickLabelProps={tickLabelProps}
+        />
         <AnimatedGrid columns={false} />
-        <AnimatedLineSeries dataKey="Graph" data={graphData} {...accessors} />
+        <AnimatedLineSeries
+          dataKey="Graph"
+          data={graphData}
+          {...accessors}
+          className="stroke-blue-400 dark:stroke-red-400 red"
+        />
         <Tooltip
           snapTooltipToDatumX
           snapTooltipToDatumY

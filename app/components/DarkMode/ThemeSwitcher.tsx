@@ -1,6 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
 export const ThemeSwitcher = () => {
@@ -14,13 +14,12 @@ export const ThemeSwitcher = () => {
   if (!mounted) {
     return null;
   }
-  // set React Icon sun and moon
   return (
     <button
-      className={`ml-6 `}
+      className="ml-6"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {theme === "light" ? "Dark" : "Light"}
+      {theme === "dark" ? <FaSun /> : <FaMoon />}
     </button>
   );
 };

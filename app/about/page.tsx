@@ -38,10 +38,15 @@ export default function About() {
       <IconButton
         aria-label="linkedin"
         href="https://www.linkedin.com/in/issac-loo-120b0163/"
+        className="dark:hover:bg-slate-400"
       >
         <LinkedInIcon />
       </IconButton>
-      <IconButton aria-label="github" href="https://github.com/issaloo">
+      <IconButton
+        aria-label="github"
+        href="https://github.com/issaloo"
+        className="dark:hover:bg-slate-400"
+      >
         <GitHubIcon />
       </IconButton>
     </CardPage>

@@ -26,7 +26,7 @@ const CurrentBox = ({
           <Typography
             variant="h4"
             align="center"
-            className="text-green-400 dark:text-white"
+            className="text-green-400 dark:text-red-400"
           >
             {isDollar
               ? `$${currentData.toLocaleString("en")}`

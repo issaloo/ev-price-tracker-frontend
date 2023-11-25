@@ -19,7 +19,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full h-24 shadow-xl bg-white backdrop-blur-md bg-opacity-20 z-50 backdrop-filter ">
+    <nav className="sticky top-0 w-full h-24 shadow-xl bg-white dark:bg-slate-700 backdrop-blur-md bg-opacity-60 dark:bg-opacity-60 z-50 backdrop-filter ">
       <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
         <div className="flex flex-row">
           <Link href="/">
