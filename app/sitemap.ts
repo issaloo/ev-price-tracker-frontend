@@ -12,7 +12,7 @@ export default async function sitemap() {
     const brand = ev.brandName;
     return ev.itemDetails.map((item: EvPriceDetail) => {
       return {
-        url: `${URL}/graph/${brand}-${item.modelName.replace(/\s+/g, "-")}`,
+        url: `${URL}/graph/${brand}/${item.modelName.replace(/\s+/g, "-")}`,
         lastModified: curDate,
         priority: 0.8,
       };
