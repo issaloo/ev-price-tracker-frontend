@@ -10,7 +10,7 @@ type NavSideMenuProps = {
 
 const NavSideMenu = ({ setMenuOpen }: NavSideMenuProps) => {
   return (
-    <div className="flex-col py-4">
+    <div className="flex-col my-4 h-full">
       <ul>
         {navObjectList.map((navObject: any) => {
           return (

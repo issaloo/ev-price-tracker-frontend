@@ -38,7 +38,11 @@ export default function RootLayout({
       <body
         className={`h-full flex flex-col justify-between ${inter.className}`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
           <NavBar />
           <main className="mb-auto">{children}</main>
           <Footer />

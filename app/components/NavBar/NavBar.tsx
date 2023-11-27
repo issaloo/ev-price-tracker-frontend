@@ -50,8 +50,8 @@ const NavBar = () => {
         <div
           className={
             menuOpen
-              ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-slate-100 p-10 ease-in duration-300"
-              : "fixed left-[-100%] top-0 p-10 ease-in duration-300"
+              ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-slate-100 dark:bg-slate-600 ease-in duration-300 py-10 px-10"
+              : "fixed left-[-100%] top-0 ease-in h-screen duration-300 py-10 px-10"
           }
         >
           <div className="flex w-full items-center justify-end">
