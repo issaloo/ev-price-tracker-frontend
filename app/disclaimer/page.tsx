@@ -5,7 +5,7 @@ import CardPage from "../components/Card/CardPage";
 export const metadata = {
   title: "EV Price Tracker | Disclaimers",
   description:
-    "Read our concise disclaimer page for important information regarding the use of evpricetracker.com. Understand terms, limitations, and responsibilities before proceeding. Clarify your experience with our straightforward disclaimer.",
+    "Read our concise disclaimer page for important information regarding the use of evpricetracker.com. Understand terms, limitations, and responsibilities before proceeding.",
   icons: {
     icon: "/favicon.png",
   },
@@ -21,6 +21,9 @@ export default function About() {
         variant="body1"
         className="mb-4 text-black dark:text-slate-400"
       >
+        Last Updated: 2023-11-14
+        <br />
+        <br />
         The information provided on this website regarding electric vehicle (EV)
         prices over time is for informational purposes only. While we strive to
         ensure the accuracy and timeliness of the data presented, we cannot
