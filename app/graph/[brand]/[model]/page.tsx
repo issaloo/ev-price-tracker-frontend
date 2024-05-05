@@ -74,7 +74,7 @@ async function Graph({ params }: { params: GraphParams }) {
             >
               see car website
             </Button>
-            {graphData.modelUrl.includes("tesla") && (
+            {/* {graphData.modelUrl.includes("tesla") && (
               <Button
                 size="small"
                 variant="contained"
@@ -83,7 +83,7 @@ async function Graph({ params }: { params: GraphParams }) {
               >
                 tesla referral
               </Button>
-            )}
+            )} */}
           </div>
         </div>
         <div className="flex flex-row mb-3 justify-center">
