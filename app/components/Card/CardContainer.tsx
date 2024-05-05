@@ -1,9 +1,9 @@
 "use client";
 import {
-  Button,
+  // Button,
   Card,
   CardActionArea,
-  CardActions,
+  // CardActions,
   CardContent,
   CardMedia,
   Divider,
@@ -118,7 +118,7 @@ const CardContainer = ({
               </Typography>
             </div>
           )}
-          {itemDetails.modelUrl.includes("tesla") && (
+          {/* {itemDetails.modelUrl.includes("tesla") && (
             <CardActions>
               <Button
                 size="small"
@@ -129,7 +129,7 @@ const CardContainer = ({
                 Referral
               </Button>
             </CardActions>
-          )}
+          )} */}
         </CardContent>
       </CardActionArea>
     </Card>
