@@ -6,7 +6,7 @@ export async function getEvPrice() {
       ...headers,
       Authorization: `Api-Key ${process.env["NEXT_PUBLIC_API_KEY"]}`,
     },
-    next: { revalidate: 43200 },
+    next: { revalidate: 7200 },
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
