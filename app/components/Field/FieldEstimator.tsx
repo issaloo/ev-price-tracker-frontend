@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import {
   FormControl,
   FormControlLabel,
@@ -17,10 +17,18 @@ import stateObjectList from "./stateObjectList.json";
 // TODO: add dark mode, add State rebates as well
 
 const FieldEstimator = () => {
-  const [st, setSt] = useState<any>({ salesTax: "", rebate: "" });
-
-  const handleChange = (event: SelectChangeEvent) => {
+  const [st, setSt] = useState<any>({ salesTax: "0", rebate: "" });
+  const handleStChange = (event: SelectChangeEvent) => {
     setSt(event.target.value);
+  };
+
+  const [fed, setFed] = useState<boolean>(true);
+  const handleFedChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFed(event.target.checked);
+  };
+  const [msrp, setMSRP] = useState<number>(0);
+  const handleMSRPChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setMSRP(event.target.valueAsNumber);
   };
   return (
     <div className="flex flex-col w-full">
@@ -34,6 +42,7 @@ const FieldEstimator = () => {
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
           variant="filled"
+          onChange={handleMSRPChange}
           className="w-64"
         />
       </div>
@@ -45,7 +54,7 @@ const FieldEstimator = () => {
             id="select-state"
             value={st}
             label="State"
-            onChange={handleChange}
+            onChange={handleStChange}
           >
             {stateObjectList.map((menuObject: any) => (
               <MenuItem key={menuObject.label} value={menuObject.value}>
@@ -69,9 +78,11 @@ const FieldEstimator = () => {
         </div>
         <TextField
           disabled
-          label="Tax Cost"
-          value={st.salesTax * 10} // INSERT MSRP to multiply
-          variant="filled"
+          label="Sales Tax Cost"
+          value={
+            !msrp ? 0 : ((parseFloat(st.salesTax) / 100.0) * msrp).toFixed(2)
+          }
+          variant="filled" // Add default nothing
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">+$</InputAdornment>
@@ -84,7 +95,7 @@ const FieldEstimator = () => {
         <div className="w-64">
           <TextField
             disabled
-            label="Rebate"
+            label="State Rebate"
             value={st.rebate}
             InputProps={{
               startAdornment: (
@@ -96,7 +107,7 @@ const FieldEstimator = () => {
         </div>
         <TextField
           disabled
-          label="Rebate Discount"
+          label="State Discount"
           value={st.rebate}
           variant="filled"
           InputProps={{
@@ -110,7 +121,7 @@ const FieldEstimator = () => {
       <div className="flex flex-row w-full mt-8 justify-between">
         <FormGroup className="w-64">
           <FormControlLabel
-            control={<Switch defaultChecked />}
+            control={<Switch defaultChecked onChange={handleFedChange} />}
             className="text-black dark:text-slate-400"
             label="Federal Rebate"
           />
@@ -118,7 +129,7 @@ const FieldEstimator = () => {
         <TextField
           disabled
           label="Federal Discount"
-          value={st.rebate}
+          value={fed ? 7500 : 0}
           variant="filled"
           InputProps={{
             startAdornment: (
@@ -133,7 +144,16 @@ const FieldEstimator = () => {
         <TextField
           disabled
           label="Estimated Total Cost"
-          value={st.rebate} // update cost resulting cost here
+          value={
+            !msrp
+              ? 0
+              : (
+                  msrp -
+                  parseFloat(st.rebate) -
+                  (fed ? 7500 : 0) +
+                  (parseFloat(st.salesTax) / 100) * msrp
+                ).toFixed(2)
+          }
           InputProps={{
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
