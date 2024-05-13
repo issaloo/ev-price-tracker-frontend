@@ -1,10 +1,10 @@
 [
   {
     "label": "California",
-    "value": 7.5
+    "value": { "salesTax": 7.5, "rebate": 9500 }
   },
   {
     "label": "New Jersey",
-    "value": 0
+    "value": { "salesTax": 0, "rebate": 0 }
   }
 ]

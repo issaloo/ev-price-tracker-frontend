@@ -4,21 +4,23 @@ import {
   FormControl,
   InputAdornment,
   InputLabel,
+  MenuItem,
   Select,
   TextField,
 } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 
-import SelectMenuItems from "./SelectMenuItems";
 import stateObjectList from "./stateObjectList.json";
 // TODO: abstract out State and sales tax into a json file!
 // TODO: add dark mode, add State rebates as well
 
+// st is an object, need to update the useState
+
 const SelectState = () => {
-  const [state, setTax] = useState("");
+  const [st, setSt] = useState<any>({ salesTax: "", rebate: "" });
 
   const handleChange = (event: SelectChangeEvent) => {
-    setTax(event.target.value);
+    setSt(event.target.value);
   };
   return (
     <div className="flex flex-row w-full">
@@ -28,18 +30,15 @@ const SelectState = () => {
           <Select
             labelId="select-label-state"
             id="select-state"
-            value={state}
+            value={st}
             label="State"
             onChange={handleChange}
           >
-            {stateObjectList.map((menuObject: any) => {
-              return (
-                <SelectMenuItems
-                  key={menuObject.label}
-                  menuObject={menuObject}
-                />
-              );
-            })}
+            {stateObjectList.map((menuObject: any) => (
+              <MenuItem key={menuObject.label} value={menuObject.value}>
+                {menuObject.label}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       </div>
@@ -47,9 +46,19 @@ const SelectState = () => {
         <TextField
           disabled
           label="Tax"
-          value={state}
+          value={st.salesTax}
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          }}
+        />
+      </div>
+      <div className="w-28">
+        <TextField
+          disabled
+          label="Rebate"
+          value={st.rebate}
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
         />
       </div>

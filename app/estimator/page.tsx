@@ -24,7 +24,9 @@ export default function Estimator() {
     <div className="flex flex-col">
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full flex flex-col md:w-3/5 sm:w-4/5 mt-4">
-          <h4 className="mx-6 text-4xl font-bold capitalize">Cost Estimator</h4>
+          <h4 className="mx-6 text-4xl font-bold capitalize">
+            EV Cost Estimator
+          </h4>
         </div>
         <Card className="mt-4 md:w-3/5 sm:w-4/5 mx-6 bg-white dark:bg-slate-800">
           <CardContent>
