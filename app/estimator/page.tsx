@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import SelectBox from "../components/Select/SelectBox";
+import SelectState from "../components/Select/SelectState";
 
 export const metadata = {
   title: "EV Price Tracker | Vehicle Cost Estimator",
@@ -35,7 +35,7 @@ export default function Estimator() {
             <div className="w-28">
               <TextField label="Price" value="TBD" />
             </div>
-            <SelectBox />
+            <SelectState />
             <FormGroup>
               <FormControlLabel
                 control={<Switch defaultChecked />}
