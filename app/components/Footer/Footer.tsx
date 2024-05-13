@@ -14,6 +14,9 @@ const Footer = () => {
           >
             Privacy Policy
           </Link>
+          <Link href="/faq" className="text-sm hover:underline text-slate-600">
+            FAQ
+          </Link>
           <Link
             href="/disclaimer"
             className="text-sm hover:underline text-slate-600"
