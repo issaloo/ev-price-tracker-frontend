@@ -1,10 +1,30 @@
 [
   {
+    "label": "Arizona",
+    "value": { "salesTax": 5.6, "rebate": 0 }
+  },
+  {
     "label": "California",
     "value": { "salesTax": 7.5, "rebate": 9500 }
   },
   {
+    "label": "Colorado",
+    "value": { "salesTax": 2.9, "rebate": 5000 }
+  },
+  {
+    "label": "Massachusetts",
+    "value": { "salesTax": 6.25, "rebate": 3500 }
+  },
+  {
     "label": "New Jersey",
     "value": { "salesTax": 0, "rebate": 0 }
+  },
+  {
+    "label": "Ohio",
+    "value": { "salesTax": 5.75, "rebate": 0 }
+  },
+  {
+    "label": "Texas",
+    "value": { "salesTax": 6.25, "rebate": 0 }
   }
 ]
