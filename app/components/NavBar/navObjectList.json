@@ -1,5 +1,5 @@
 [
   { "pageName": "about", "pageRoute": "/about" },
-  { "pageName": "faq", "pageRoute": "/faq" },
+  { "pageName": "estimator", "pageRoute": "/estimator" },
   { "pageName": "vehicles", "pageRoute": "/vehicles" }
 ]

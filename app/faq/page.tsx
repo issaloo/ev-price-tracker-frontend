@@ -8,13 +8,13 @@ import qaObjectList from "./qaObjectList.json";
 export const metadata = {
   title: "EV Price Tracker | FAQ",
   description:
-    "Get quick answers to common questions about evpricetracker.com in our Frequently Asked Questions (FAQ) section. ",
+    "Get quick answers to common questions about evpricetracker.com in our Frequently Asked Questions (FAQ) section.",
   icons: {
     icon: "/favicon.png",
   },
 };
 
-function Usage() {
+export default function Faq() {
   return (
     <CardPage>
       <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">
@@ -26,5 +26,3 @@ function Usage() {
     </CardPage>
   );
 }
-
-export default Usage;

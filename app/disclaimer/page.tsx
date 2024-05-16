@@ -11,7 +11,7 @@ export const metadata = {
   },
 };
 
-export default function About() {
+export default function Disclaimer() {
   return (
     <CardPage>
       <Typography variant="h5" className="mb-2 text-black dark:text-slate-200">

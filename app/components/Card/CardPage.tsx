@@ -7,9 +7,9 @@ interface Props {
 
 const CardPage = ({ children }: Props) => {
   return (
-    <div className="flex flex-col">
-      <div className="w-full flex flex-row justify-center items-start">
-        <Card className="mt-9 md:w-3/5 sm:w-4/5 mx-6 bg-white dark:bg-slate-800">
+    <div className="w-full flex flex-col">
+      <div className="w-full flex flex-row justify-center">
+        <Card className="mt-8 sm:w-[620px] w-[450px] mx-6 bg-white dark:bg-slate-800">
           <CardContent>{children}</CardContent>
         </Card>
       </div>
