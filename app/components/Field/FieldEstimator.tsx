@@ -1,6 +1,7 @@
 "use client";
 import { ChangeEvent, useState } from "react";
 import {
+  Divider,
   FormControl,
   FormControlLabel,
   FormGroup,
@@ -10,6 +11,7 @@ import {
   Select,
   Switch,
   TextField,
+  Typography,
 } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 
@@ -33,21 +35,26 @@ const FieldEstimator = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-row w-full justify-between">
-        <div className="w-40 mr-16" />
+        <Typography variant="h6" className="text-gray-400 mt-2 ml-4">
+          EV Base Price
+        </Typography>
         <TextField
           id="filled-number"
-          label="MSRP"
+          label=""
           type="number"
           InputProps={{
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
-          variant="filled"
           onChange={handleMSRPChange}
-          className="w-64"
+          className="w-48"
         />
       </div>
-      <div className="flex flex-row w-full mt-8">
-        <FormControl fullWidth className="w-48">
+      <Divider variant="middle" className="my-6" />
+      <Typography variant="h6" className="text-gray-400 mb-4 ml-4">
+        Purchase State
+      </Typography>
+      <div className="flex flex-row w-full">
+        <FormControl fullWidth>
           <InputLabel id="select-label-state">State</InputLabel>
           <Select
             labelId="select-label-state"
@@ -65,85 +72,82 @@ const FieldEstimator = () => {
         </FormControl>
       </div>
       <div className="flex flex-row w-full mt-4 justify-between">
-        <div className="w-64">
-          <TextField
-            disabled
-            label="Sales Tax"
-            value={st.salesTax}
-            InputProps={{
-              endAdornment: <InputAdornment position="end">%</InputAdornment>,
-            }}
-            className="ml-8 mr-12 w-40"
-          />
-        </div>
         <TextField
           disabled
-          label="Sales Tax Cost"
+          label="Sales Tax"
+          value={st.salesTax}
+          InputProps={{
+            endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          }}
+          className="ml-10 w-40"
+        />
+        <TextField
+          disabled
           value={
             !msrp ? 0 : ((parseFloat(st.salesTax) / 100.0) * msrp).toFixed(2)
           }
-          variant="filled" // Add default nothing
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">+$</InputAdornment>
+              <InputAdornment position="start">+ $</InputAdornment>
             ),
           }}
-          className="w-64"
+          className="w-48"
         />
       </div>
       <div className="flex flex-row w-full mt-4 justify-between">
-        <div className="w-64">
-          <TextField
-            disabled
-            label="State Rebate"
-            value={st.rebate}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">$</InputAdornment>
-              ),
-            }}
-            className="ml-8 mr-12 w-40"
-          />
-        </div>
         <TextField
           disabled
-          label="State Discount"
+          label="State Rebate"
           value={st.rebate}
-          variant="filled"
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          }}
+          className="ml-10 w-40"
+        />
+        <TextField
+          disabled
+          value={st.rebate}
+          // variant="filled"
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">-$</InputAdornment>
+              <InputAdornment position="start">– $</InputAdornment>
             ),
           }}
-          className="w-64"
+          className="w-48"
         />
       </div>
-      <div className="flex flex-row w-full mt-8 justify-between">
-        <FormGroup className="w-64">
+      <Divider variant="middle" className="my-6" />
+      <div className="flex flex-row w-full justify-between">
+        <Typography variant="h6" className="text-gray-400 mt-1 ml-4">
+          Federal Rebate
+        </Typography>
+        <FormGroup className="w-40">
           <FormControlLabel
             control={<Switch defaultChecked onChange={handleFedChange} />}
             className="text-black dark:text-slate-400"
-            label="Federal Rebate"
+            label="Add Discount"
           />
         </FormGroup>
+      </div>
+      <div className="flex flex-row w-full justify-end">
         <TextField
           disabled
-          label="Federal Discount"
           value={fed ? 7500 : 0}
-          variant="filled"
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">-$</InputAdornment>
+              <InputAdornment position="start">– $</InputAdornment>
             ),
           }}
-          className="w-64"
+          className="w-48"
         />
       </div>
-      <div className="flex flex-row w-full mt-8 justify-between">
-        <div className="w-64" />
+      <Divider variant="middle" className="my-6" />
+      <div className="flex flex-row w-full justify-between">
+        <Typography variant="h6" className="mt-2 ml-4">
+          Estimated Total Cost
+        </Typography>
         <TextField
           disabled
-          label="Estimated Total Cost"
           value={
             !msrp
               ? 0
@@ -157,7 +161,7 @@ const FieldEstimator = () => {
           InputProps={{
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
-          className="w-64"
+          className="w-48"
         />
       </div>
     </div>

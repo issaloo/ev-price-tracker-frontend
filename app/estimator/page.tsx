@@ -13,8 +13,8 @@ export const metadata = {
 export default function Estimator() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="w-full flex flex-col md:w-3/5 sm:w-4/5 mt-6">
-        <h4 className="mx-6 text-4xl font-bold capitalize">
+      <div className="sm:w-[620px] w-[450px] flex flex-row mt-6">
+        <h4 className="w-full mx-6 text-4xl font-bold capitalize">
           EV Cost Estimator
         </h4>
       </div>
