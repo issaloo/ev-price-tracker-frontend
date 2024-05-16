@@ -17,6 +17,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 
 import stateObjectList from "./stateObjectList.json";
 // TODO: add dark mode, add State rebates as well
+// TODO: add rebate threshold, if applicable
 
 const FieldEstimator = () => {
   const [st, setSt] = useState<any>({ salesTax: "0", rebate: "" });
