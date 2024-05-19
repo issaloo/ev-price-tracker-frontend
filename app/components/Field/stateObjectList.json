@@ -5,7 +5,7 @@
   },
   {
     "label": "California",
-    "value": { "salesTax": 7.5, "rebate": 9500 }
+    "value": { "salesTax": 7.5, "rebate": 7500 }
   },
   {
     "label": "Colorado",

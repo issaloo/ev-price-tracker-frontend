@@ -36,8 +36,11 @@ const FieldEstimator = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-row w-full justify-between">
-        <Typography variant="h6" className="text-gray-400 mt-2 ml-4">
-          EV Base Price
+        <Typography
+          variant="h6"
+          className="text-gray-400 dark:text-slate-600 mt-2 ml-4"
+        >
+          Base Price
         </Typography>
         <TextField
           id="filled-number"
@@ -47,11 +50,14 @@ const FieldEstimator = () => {
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
           onChange={handleMSRPChange}
-          className="w-48"
+          className="w-32 sm:w-48 dark:bg-slate-300"
         />
       </div>
       <Divider variant="middle" className="my-6" />
-      <Typography variant="h6" className="text-gray-400 mb-4 ml-4">
+      <Typography
+        variant="h6"
+        className="text-gray-400 dark:text-slate-600 mb-4 ml-4"
+      >
         Purchase State
       </Typography>
       <div className="flex flex-row w-full">
@@ -63,6 +69,7 @@ const FieldEstimator = () => {
             value={st}
             label="State"
             onChange={handleStChange}
+            className="dark:bg-slate-300 "
           >
             {stateObjectList.map((menuObject: any) => (
               <MenuItem key={menuObject.label} value={menuObject.value}>
@@ -80,7 +87,7 @@ const FieldEstimator = () => {
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
           }}
-          className="ml-10 w-40"
+          className="ml-10 w-28 sm:w-40 dark:bg-slate-300"
         />
         <TextField
           disabled
@@ -92,7 +99,7 @@ const FieldEstimator = () => {
               <InputAdornment position="start">+ $</InputAdornment>
             ),
           }}
-          className="w-48"
+          className="w-32 sm:w-48 dark:bg-slate-300"
         />
       </div>
       <div className="flex flex-row w-full mt-4 justify-between">
@@ -103,30 +110,29 @@ const FieldEstimator = () => {
           InputProps={{
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
-          className="ml-10 w-40"
+          className="ml-10 w-28 sm:w-40 dark:bg-slate-300"
         />
         <TextField
           disabled
           value={st.rebate}
-          // variant="filled"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">– $</InputAdornment>
             ),
           }}
-          className="w-48"
+          className="w-32 sm:w-48 dark:bg-slate-300"
         />
       </div>
       <Divider variant="middle" className="my-6" />
       <div className="flex flex-row w-full justify-between">
-        <Typography variant="h6" className="text-gray-400 mt-1 ml-4">
+        <Typography variant="h6" className="text-gray-400 dark:text-slate-600">
           Federal Rebate
         </Typography>
-        <FormGroup className="w-40">
+        <FormGroup className="w-20">
           <FormControlLabel
             control={<Switch defaultChecked onChange={handleFedChange} />}
-            className="text-black dark:text-slate-400"
-            label="Add Discount"
+            className="text-gray-400 dark:text-slate-600"
+            label="Add"
           />
         </FormGroup>
       </div>
@@ -139,13 +145,16 @@ const FieldEstimator = () => {
               <InputAdornment position="start">– $</InputAdornment>
             ),
           }}
-          className="w-48"
+          className="w-32 sm:w-48 dark:bg-slate-300"
         />
       </div>
       <Divider variant="middle" className="my-6" />
       <div className="flex flex-row w-full justify-between">
-        <Typography variant="h6" className="mt-2 ml-4">
-          Estimated Total Cost
+        <Typography
+          variant="h6"
+          className="mt-2 ml-4 text-gray-400 dark:text-slate-600"
+        >
+          Total Cost
         </Typography>
         <TextField
           disabled
@@ -162,7 +171,7 @@ const FieldEstimator = () => {
           InputProps={{
             startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
-          className="w-48"
+          className="w-32 sm:w-48 dark:bg-slate-300"
         />
       </div>
     </div>
