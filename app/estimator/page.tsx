@@ -1,4 +1,5 @@
-import CardPage from "../components/Card/CardPage";
+import { Card, CardContent } from "@mui/material";
+
 import FieldEstimator from "../components/Field/FieldEstimator";
 
 export const metadata = {
@@ -12,15 +13,23 @@ export const metadata = {
 
 export default function Estimator() {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div className="sm:w-[620px] w-[450px] flex flex-row mt-6">
-        <h4 className="w-full mx-6 text-4xl font-bold capitalize">
-          EV Cost Estimator
-        </h4>
+    <div className="w-full flex flex-col">
+      <div className="w-full flex flex-row justify-center">
+        <div className="sm:w-[620px] w-[450px] mx-6">
+          <h4 className="mt-6 ml-2 text-4xl font-bold capitalize">
+            EV Cost Estimator
+          </h4>
+        </div>
       </div>
-      <CardPage>
-        <FieldEstimator />
-      </CardPage>
+      <div className="w-full flex flex-col">
+        <div className="w-full flex flex-row justify-center">
+          <Card className="mt-8 sm:w-[620px] w-[450px] mx-6 bg-white dark:bg-slate-300">
+            <CardContent>
+              <FieldEstimator />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }
